@@ -11,13 +11,13 @@
 	impact_effect_type = /obj/effect/temp_visual/impact_effect/red_laser
 	light_system = MOVABLE_LIGHT
 	hitscan_light_intensity = 2
-	hitscan_light_range = 0.50
+	hitscan_light_range = 0.75
 	hitscan_light_color_override = COLOR_SOFT_RED
 	muzzle_flash_intensity = 4
-	muzzle_flash_range = 1
+	muzzle_flash_range = 2
 	muzzle_flash_color_override = COLOR_SOFT_RED
 	impact_light_intensity = 5
-	impact_light_range = 1.25
+	impact_light_range = 2.5
 	impact_light_color_override = COLOR_SOFT_RED
 	ricochets_max = 50 //Honk!
 	ricochet_chance = 80
