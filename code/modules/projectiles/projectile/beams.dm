@@ -30,7 +30,6 @@
 	tracer_type = /obj/effect/projectile/tracer/laser
 	muzzle_type = /obj/effect/projectile/muzzle/laser
 	impact_type = /obj/effect/projectile/impact/laser
-	hitscan = TRUE
 	wound_bonus = -30
 	bare_wound_bonus = 40
 
@@ -42,7 +41,7 @@
 	impact_light_color_override = COLOR_DARK_RED
 	wound_bonus = 0
 	damage = 25
-	hitscan = TRUE
+	speed = 0.6 // higher power = faster, that's how light works right
 
 /obj/projectile/beam/laser/heavylaser
 	name = "heavy laser"
@@ -61,32 +60,20 @@
 		impact_effect_type = /obj/effect/temp_visual/impact_effect/red_laser/wall
 
 /obj/projectile/beam/weak
-	tracer_type = /obj/effect/projectile/tracer/laser
-	muzzle_type = /obj/effect/projectile/muzzle/laser
-	impact_type = /obj/effect/projectile/impact/laser
 	damage = 15
-	hitscan = TRUE
 
 /obj/projectile/beam/weak/penetrator
 	armour_penetration = 50
 
 /obj/projectile/beam/practice
 	name = "practice laser"
-	tracer_type = /obj/effect/projectile/tracer/laser
-	muzzle_type = /obj/effect/projectile/muzzle/laser
-	impact_type = /obj/effect/projectile/impact/laser
 	damage = 0
 	nodamage = TRUE
-	hitscan = TRUE
 
 /obj/projectile/beam/scatter
 	name = "laser pellet"
 	icon_state = "scatterlaser"
-	tracer_type = /obj/effect/projectile/tracer/laser
-	muzzle_type = /obj/effect/projectile/muzzle/laser
-	impact_type = /obj/effect/projectile/impact/laser
 	damage = 5
-	hitscan = TRUE
 
 /obj/projectile/beam/xray
 	name = "\improper X-ray beam"
@@ -96,7 +83,6 @@
 	irradiate = 300
 	range = 15
 	pass_flags = PASSTABLE | PASSGLASS | PASSGRILLE | PASSCLOSEDTURF | PASSMACHINE | PASSSTRUCTURE
-	hitscan = TRUE
 
 	impact_effect_type = /obj/effect/temp_visual/impact_effect/green_laser
 	hitscan_light_color_override = LIGHT_COLOR_GREEN
@@ -121,7 +107,6 @@
 	tracer_type = /obj/effect/projectile/tracer/disabler
 	muzzle_type = /obj/effect/projectile/muzzle/disabler
 	impact_type = /obj/effect/projectile/impact/disabler
-	hitscan = TRUE
 
 /obj/projectile/beam/pulse
 	name = "pulse"
