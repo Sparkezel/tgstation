@@ -43,6 +43,10 @@
 	damage = 25
 	speed = 0.6 // higher power = faster, that's how light works right
 
+/obj/projectile/beam/laser/hellfire/Initialize()
+	. = ..()
+	transform *= 2
+
 /obj/projectile/beam/laser/heavylaser
 	name = "heavy laser"
 	icon_state = "heavylaser"
