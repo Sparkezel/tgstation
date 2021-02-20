@@ -35,10 +35,6 @@
 	damage = 25
 	hitscan = TRUE
 
-/obj/projectile/beam/laser/hellfire/Initialize()
-	. = ..()
-	transform *= 2
-
 /obj/projectile/beam/laser/heavylaser
 	name = "heavy laser"
 	icon_state = "heavylaser"
