@@ -19,12 +19,13 @@
 	if(W)
 		W.registered_name = H.real_name
 		W.update_label()
-	..()
+		W.update_icon()
+	return ..()
 
 /datum/outfit/centcom/ert/commander
 	name = "ERT Commander"
 
-	id = /obj/item/card/id/ert
+	id = /obj/item/card/id/advanced/centcom/ert
 	suit = /obj/item/clothing/suit/space/hardsuit/ert
 	suit_store = /obj/item/gun/energy/e_gun
 	glasses = /obj/item/clothing/glasses/hud/security/sunglasses
@@ -56,7 +57,7 @@
 /datum/outfit/centcom/ert/security
 	name = "ERT Security"
 
-	id = /obj/item/card/id/ert/security
+	id = /obj/item/card/id/advanced/centcom/ert/security
 	suit = /obj/item/clothing/suit/space/hardsuit/ert/sec
 	suit_store = /obj/item/gun/energy/e_gun/stun
 	glasses = /obj/item/clothing/glasses/hud/security/sunglasses
@@ -91,7 +92,7 @@
 /datum/outfit/centcom/ert/medic
 	name = "ERT Medic"
 
-	id = /obj/item/card/id/ert/medical
+	id = /obj/item/card/id/advanced/centcom/ert/medical
 	suit = /obj/item/clothing/suit/space/hardsuit/ert/med
 	suit_store = /obj/item/gun/energy/e_gun
 	glasses = /obj/item/clothing/glasses/hud/health
@@ -101,7 +102,8 @@
 	backpack_contents = list(/obj/item/storage/box/survival/engineer=1,\
 		/obj/item/melee/baton/loaded=1,\
 		/obj/item/reagent_containers/hypospray/combat=1,\
-		/obj/item/gun/medbeam=1)
+		/obj/item/gun/medbeam=1,\
+		/obj/item/storage/box/hug/plushes=1)
 
 /datum/outfit/centcom/ert/medic/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	..()
@@ -121,12 +123,13 @@
 		/obj/item/melee/baton/loaded=1,\
 		/obj/item/gun/energy/pulse/pistol/loyalpin=1,\
 		/obj/item/reagent_containers/hypospray/combat/nanites=1,\
-		/obj/item/gun/medbeam=1)
+		/obj/item/gun/medbeam=1,\
+		/obj/item/storage/box/hug/plushes=1)
 
 /datum/outfit/centcom/ert/engineer
 	name = "ERT Engineer"
 
-	id = /obj/item/card/id/ert/engineer
+	id = /obj/item/card/id/advanced/centcom/ert/engineer
 	suit = /obj/item/clothing/suit/space/hardsuit/ert/engi
 	suit_store = /obj/item/gun/energy/e_gun
 	glasses =  /obj/item/clothing/glasses/meson/engine
@@ -174,8 +177,9 @@
 	back = /obj/item/storage/backpack/satchel
 	r_pocket = /obj/item/pda/heads
 	l_hand = /obj/item/clipboard
-	id = /obj/item/card/id/centcom
+	id = /obj/item/card/id/advanced/centcom
 	backpack_contents = list(/obj/item/stamp/centcom=1)
+	id_trim = /datum/id_trim/centcom/official
 
 /datum/outfit/centcom/centcom_official/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	if(visualsOnly)
@@ -187,12 +191,10 @@
 	pda.update_label()
 
 	var/obj/item/card/id/W = H.wear_id
-	W.access = get_centcom_access("CentCom Official")
-	W.access += ACCESS_WEAPONS
-	W.assignment = "CentCom Official"
 	W.registered_name = H.real_name
 	W.update_label()
-	..()
+	W.update_icon()
+	return ..()
 
 /datum/outfit/centcom/ert/commander/inquisitor
 	name = "Inquisition Commander"
@@ -227,7 +229,7 @@
 
 	suit = /obj/item/clothing/suit/space/hardsuit/ert/paranormal/inquisitor // Chap role always gets this suit
 	suit_store = /obj/item/gun/energy/e_gun
-	id = /obj/item/card/id/ert/chaplain
+	id = /obj/item/card/id/advanced/centcom/ert/chaplain
 	glasses = /obj/item/clothing/glasses/hud/health
 	back = /obj/item/storage/backpack/cultpack
 	belt = /obj/item/storage/belt/soulstone
@@ -255,7 +257,7 @@
 /datum/outfit/centcom/ert/janitor
 	name = "ERT Janitor"
 
-	id = /obj/item/card/id/ert/janitor
+	id = /obj/item/card/id/advanced/centcom/ert/janitor
 	suit = /obj/item/clothing/suit/space/hardsuit/ert/jani
 	glasses = /obj/item/clothing/glasses/night
 	back = /obj/item/storage/backpack/ert/janitor
@@ -295,7 +297,7 @@
 
 	suit = /obj/item/clothing/suit/space/hardsuit/ert/clown
 	mask = /obj/item/clothing/mask/gas/clown_hat
-	id = /obj/item/card/id/ert/clown
+	id = /obj/item/card/id/advanced/centcom/ert/clown
 	glasses = /obj/item/clothing/glasses/godeye
 	back = /obj/item/storage/backpack/ert/clown
 	belt = /obj/item/storage/belt/champion
@@ -332,19 +334,19 @@
 	back = /obj/item/storage/backpack/satchel
 	l_pocket = /obj/item/ammo_box/a762
 	r_pocket = /obj/item/ammo_box/a762
-	id = /obj/item/card/id/centcom
+	id = /obj/item/card/id/advanced/centcom
 	backpack_contents = list(/obj/item/storage/box/survival = 1)
+	id_trim = /datum/id_trim/centcom/intern
 
 /datum/outfit/centcom/centcom_intern/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	if(visualsOnly)
 		return
 
 	var/obj/item/card/id/W = H.wear_id
-	W.access = get_centcom_access(name)
-	W.access += ACCESS_WEAPONS
-	W.assignment = name
 	W.registered_name = H.real_name
 	W.update_label()
+	W.update_icon()
+	return ..()
 
 /datum/outfit/centcom/centcom_intern/unarmed
 	name = "CentCom Intern (Unarmed)"
