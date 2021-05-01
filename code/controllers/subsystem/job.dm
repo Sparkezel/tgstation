@@ -18,6 +18,7 @@ SUBSYSTEM_DEF(job)
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	/// A list of all jobs associated with the station. These jobs also have various icons associated with them including sechud and card trims.
 	var/list/station_jobs
 	/// A list of all Head of Staff jobs.
@@ -54,6 +55,8 @@ SUBSYSTEM_DEF(job)
 	/// If TRUE, the "Captain" job will always be given the code to the spare ID safe and always have a "Captain on deck!" announcement.
 	var/always_promote_captain_job = TRUE
 
+=======
+>>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
 =======
 >>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
 =======
@@ -782,6 +785,7 @@ SUBSYSTEM_DEF(job)
 	log_job_debug(message)
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 /// Builds various lists of jobs based on station, centcom and additional jobs with icons associated with them.
 /datum/controller/subsystem/job/proc/setup_job_lists()
@@ -855,6 +859,8 @@ SUBSYSTEM_DEF(job)
 	new /obj/effect/pod_landingzone(loc, /obj/structure/closet/supplypod/centcompod, new /obj/item/paper/fluff/emergency_spare_id_safe_code())
 	safe_code_timer_id = null
 	safe_code_request_loc = null
+=======
+>>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
 =======
 >>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
 =======

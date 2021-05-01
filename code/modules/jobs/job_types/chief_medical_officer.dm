@@ -34,6 +34,7 @@
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	mail_goodies = list(
 		/obj/effect/spawner/lootdrop/organ_spawner = 10,
 		/obj/effect/spawner/lootdrop/memeorgans = 8,
@@ -47,6 +48,8 @@
 	if(announce_captaincy)
 		SSticker.OnRoundstart(CALLBACK(GLOBAL_PROC, .proc/minor_announce, "Due to staffing shortages, newly promoted Acting Captain [H.real_name] on deck!"))
 
+=======
+>>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
 =======
 >>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
 =======

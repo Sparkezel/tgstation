@@ -22,10 +22,13 @@
 	bounty_types = CIV_JOB_RANDOM
 	departments = DEPARTMENT_CARGO
 <<<<<<< HEAD
+<<<<<<< HEAD
 	family_heirlooms = list(/obj/item/stamp, /obj/item/stamp/denied)
 	mail_goodies = list(
 		/obj/item/circuitboard/machine/emitter = 3
 	)
+=======
+>>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
 =======
 >>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
 

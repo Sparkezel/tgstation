@@ -665,7 +665,11 @@
 	r_pocket = /obj/item/ammo_box/magazine/recharge/ctf/red
 <<<<<<< HEAD:code/modules/capture_the_flag/capture_the_flag.dm
 <<<<<<< HEAD:code/modules/capture_the_flag/capture_the_flag.dm
+<<<<<<< HEAD:code/modules/capture_the_flag/capture_the_flag.dm
 	id = /obj/item/card/id/red //it's red
+=======
+	id = /obj/item/card/id/syndicate_command //it's red
+>>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910)):code/modules/awaymissions/capture_the_flag.dm
 =======
 	id = /obj/item/card/id/syndicate_command //it's red
 >>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910)):code/modules/awaymissions/capture_the_flag.dm
@@ -684,7 +688,11 @@
 	r_pocket = /obj/item/ammo_box/magazine/recharge/ctf/blue
 <<<<<<< HEAD:code/modules/capture_the_flag/capture_the_flag.dm
 <<<<<<< HEAD:code/modules/capture_the_flag/capture_the_flag.dm
+<<<<<<< HEAD:code/modules/capture_the_flag/capture_the_flag.dm
 	id = /obj/item/card/id/blue //it's blue
+=======
+	id = /obj/item/card/id/centcom //it's blue
+>>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910)):code/modules/awaymissions/capture_the_flag.dm
 =======
 	id = /obj/item/card/id/centcom //it's blue
 >>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910)):code/modules/awaymissions/capture_the_flag.dm

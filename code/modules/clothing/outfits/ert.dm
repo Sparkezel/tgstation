@@ -201,6 +201,11 @@
 	l_hand = /obj/item/clipboard
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+	id = /obj/item/card/id/centcom
+	backpack_contents = list(/obj/item/stamp/centcom=1)
+>>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
 =======
 	id = /obj/item/card/id/centcom
 	backpack_contents = list(/obj/item/stamp/centcom=1)
@@ -268,7 +273,10 @@
 	suit_store = /obj/item/gun/energy/e_gun
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
 =======
 >>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
 	id = /obj/item/card/id/ert/chaplain
@@ -398,7 +406,12 @@
 	r_pocket = /obj/item/ammo_box/a762
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	l_hand = /obj/item/gun/ballistic/rifle/boltaction/brand_new
+=======
+	id = /obj/item/card/id/centcom
+	backpack_contents = list(/obj/item/storage/box/survival = 1)
+>>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
 =======
 	id = /obj/item/card/id/centcom
 	backpack_contents = list(/obj/item/storage/box/survival = 1)

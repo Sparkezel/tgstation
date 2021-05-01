@@ -333,10 +333,13 @@
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 /// An overridable getter for more dynamic goodies.
 /datum/job/proc/get_mail_goodies(mob/recipient)
 	return mail_goodies
 =======
+=======
+>>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
 =======
 >>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
 //Warden and regular officers add this result to their get_access()
@@ -345,6 +348,9 @@
 		return list(ACCESS_MAINT_TUNNELS)
 	return list()
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
+=======
 >>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
 =======
 >>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))

@@ -46903,7 +46903,10 @@
 	dir = 4
 	},
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
 /turf/open/floor/wood,
 /area/command/heads_quarters/hop)
 "mpE" = (

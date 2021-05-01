@@ -22,6 +22,7 @@
 	var/minor = FALSE
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	/// The name/assignment combo of the ID card used to authenticate.
 	var/authenticated_user
 	/// The regions this program has access to based on the authenticated ID.
@@ -34,11 +35,16 @@
 =======
 =======
 >>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
+=======
+>>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
 	var/authenticated = FALSE
 	var/list/region_access
 	var/list/head_subordinates
 	///Which departments this computer has access to. Defined as access regions. null = all departments
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
+=======
 >>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
 =======
 >>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
@@ -81,6 +87,7 @@
 	if(!id_card)
 		return
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 	region_access.Cut()
@@ -126,6 +133,15 @@
 		return TRUE
 
 >>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
+=======
+	region_access = list()
+	if(!target_dept && (ACCESS_CHANGE_IDS in id_card.access))
+		minor = FALSE
+		authenticated = TRUE
+		update_static_data(user)
+		return TRUE
+
+>>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
 	var/list/head_types = list()
 	for(var/access_text in sub_managers)
 		var/list/info = sub_managers[access_text]
@@ -147,6 +163,9 @@
 		minor = TRUE
 		authenticated = TRUE
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
+=======
 >>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
 =======
 >>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
@@ -229,6 +248,7 @@
 			if(minor)
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 				if(!(target_id_card.trim?.type in job_templates))
 					to_chat(usr, "<span class='notice'>Software error: You do not have the necessary permissions to demote this card.</span>")
 					return TRUE
@@ -236,6 +256,10 @@
 			// Set the new assignment then remove the trim.
 			target_id_card.assignment = is_centcom ? "Fired" : "Demoted"
 			SSid_access.remove_trim_from_card(target_id_card)
+=======
+				if(!(target_id_card.assignment in head_subordinates) && target_id_card.assignment != "Assistant")
+					return
+>>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
 =======
 				if(!(target_id_card.assignment in head_subordinates) && target_id_card.assignment != "Assistant")
 					return
@@ -271,6 +295,7 @@
 		if("PRG_age")
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 			if(!computer || !authenticated_user || !target_id_card)
 				return TRUE
 
@@ -283,6 +308,8 @@
 =======
 =======
 >>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
+=======
+>>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
 			if(!computer || !authenticated || !target_id_card)
 				return
 			target_id_card.registered_age = params["id_age"]
@@ -292,6 +319,7 @@
 		if("PRG_assign")
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 			if(!computer || !authenticated_user || !target_id_card)
 				return TRUE
 			var/new_asignment = sanitize(params["assignment"])
@@ -299,6 +327,8 @@
 			playsound(computer, "terminal_type", 50, FALSE)
 			target_id_card.update_label()
 =======
+=======
+>>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
 =======
 >>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
 			if(!computer || !authenticated || !target_id_card)
@@ -346,6 +376,7 @@
 				target_id_card.update_label()
 			playsound(computer, 'sound/machines/terminal_prompt_confirm.ogg', 50, FALSE)
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
 			return TRUE
 		if("PRG_access")
@@ -381,6 +412,10 @@
 			return TRUE
 		if("PRG_access")
 >>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
+=======
+			return TRUE
+		if("PRG_access")
+>>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
 			if(!computer || !authenticated)
 				return
 			var/access_type = text2num(params["access_target"])
@@ -394,6 +429,9 @@
 					LOG_ID_ACCESS_CHANGE(user, target_id_card, "added [get_access_desc(access_type)]")
 				playsound(computer, "terminal_type", 50, FALSE)
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
+=======
 >>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
 =======
 >>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
@@ -435,6 +473,7 @@
 
 				LOG_ID_ACCESS_CHANGE(user, target_id_card, "added [get_region_accesses_name(region)] region access")
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 <<<<<<< HEAD
 			stack_trace("[key_name(usr)] ([usr]) attempted to apply invalid template \[[template_name]\] to [target_id_card]")
@@ -445,6 +484,22 @@
 >>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
 
 			playsound(computer, 'sound/machines/terminal_prompt_confirm.ogg', 50, FALSE)
+=======
+
+
+			playsound(computer, 'sound/machines/terminal_prompt_confirm.ogg', 50, FALSE)
+			return TRUE
+		if("PRG_denyregion")
+			if(!computer || !authenticated)
+				return
+			var/region = text2num(params["region"])
+			if(isnull(region))
+				return
+			if(is_centcom)
+				target_id_card.access -= get_all_centcom_access()
+			target_id_card.access -= get_region_accesses(region)
+			playsound(computer, 'sound/machines/terminal_prompt_deny.ogg', 50, FALSE)
+>>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
 			return TRUE
 		if("PRG_denyregion")
 			if(!computer || !authenticated)
@@ -461,6 +516,8 @@
 =======
 >>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
 			return TRUE
+
+
 
 
 
@@ -501,8 +558,11 @@
 	if(is_centcom)
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 		regions += tgui_region_data[REGION_CENTCOM]
 =======
+=======
+>>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
 =======
 >>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
 		var/list/accesses = list()
@@ -519,6 +579,9 @@
 			"accesses" = accesses
 		))
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
+=======
 >>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
 =======
 >>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))

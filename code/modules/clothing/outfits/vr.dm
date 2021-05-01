@@ -13,6 +13,9 @@
 	ears = /obj/item/radio/headset
 	id = /obj/item/card/id
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
+=======
 >>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
 =======
 >>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
@@ -34,10 +37,14 @@
 	back = /obj/item/storage/backpack
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	backpack_contents = list(
 		/obj/item/storage/box/survival/syndie = 1,
 		/obj/item/kitchen/knife/combat/survival = 1,
 )
+=======
+	id = /obj/item/card/id/syndicate
+>>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
 =======
 	id = /obj/item/card/id/syndicate
 >>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
@@ -53,6 +60,9 @@
 	backpack_contents = list(/obj/item/storage/box/survival/syndie=1,\
 		/obj/item/kitchen/knife/combat/survival)
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
+=======
 >>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
 =======
 >>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))

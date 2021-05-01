@@ -23,6 +23,7 @@ Assistant
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	family_heirlooms = list(/obj/item/storage/toolbox/mechanical/old/heirloom, /obj/item/clothing/gloves/cut/heirloom)
 
 	mail_goodies = list(
@@ -36,6 +37,8 @@ Assistant
 =======
 =======
 >>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
+=======
+>>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
 /datum/job/assistant/get_access()
 	if(CONFIG_GET(flag/assistants_have_maint_access) || !CONFIG_GET(flag/jobs_have_minimal_access)) //Config has assistant maint access set
 		. = ..()
@@ -43,6 +46,9 @@ Assistant
 	else
 		return ..()
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
+=======
 >>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
 =======
 >>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))

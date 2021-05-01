@@ -196,6 +196,7 @@
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 /**
  * Queues an announcement arrival.
  *
@@ -203,6 +204,8 @@
  * * mob - The arriving mob.
  * * rank - The job of the arriving mob.
  */
+=======
+>>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
 =======
 >>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
 =======

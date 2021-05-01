@@ -37,6 +37,7 @@
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	family_heirlooms = list(/obj/item/book/manual/wiki/security_space_law)
 
 /datum/job/head_of_security/announce(mob/living/carbon/human/H, announce_captaincy = FALSE)
@@ -44,6 +45,8 @@
 	if(announce_captaincy)
 		SSticker.OnRoundstart(CALLBACK(GLOBAL_PROC, .proc/minor_announce, "Due to staffing shortages, newly promoted Acting Captain [H.real_name] on deck!"))
 
+=======
+>>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
 =======
 >>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
 =======

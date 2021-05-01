@@ -559,9 +559,12 @@ Pass a positive integer as an argument to override a bot's default speed.
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	//For giving the bot temporary all-access. This method is bad and makes me feel bad. Refactoring access to a component is for another PR.
 	var/obj/item/card/id/all_access = new /obj/item/card/id/advanced/gold/captains_spare()
 =======
+=======
+>>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
 =======
 >>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
 	//For giving the bot temporary all-access.
@@ -569,6 +572,9 @@ Pass a positive integer as an argument to override a bot's default speed.
 	var/datum/job/captain/All = new/datum/job/captain
 	all_access.access = All.get_access()
 
+<<<<<<< HEAD
+>>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
+=======
 >>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
 	set_path(get_path_to(src, waypoint, 200, id=all_access))
 	qdel(all_access)
@@ -1008,9 +1014,13 @@ Pass a positive integer as an argument to override a bot's default speed.
 		return FALSE
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	// If we have any bonus player accesses, add them to our internal ID card.
 	if(length(player_access))
 		access_card.add_access(player_access)
+=======
+	access_card.access += player_access
+>>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
 =======
 	access_card.access += player_access
 >>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
