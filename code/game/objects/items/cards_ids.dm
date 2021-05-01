@@ -82,6 +82,7 @@
 	resistance_flags = FIRE_PROOF | ACID_PROOF
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 	/// Cached icon that has been built for this card. Intended for use in chat.
 	var/icon/cached_flat_icon
@@ -91,6 +92,8 @@
 =======
 =======
 >>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
+=======
+>>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
 	var/id_type_name = "identification card"
 	var/mining_points = 0 //For redeeming at mining equipment vendors
 	///The stuff that makes you open doors and shit
@@ -98,6 +101,9 @@
 	///Access that cannot be removed by the ID console. Do not add access levels that are actually visible in the console here if a HoP knowing what kind of ID he's modifying is a concern.
 	var/list/sticky_access
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
+=======
 >>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
 =======
 >>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
@@ -109,6 +115,7 @@
 	var/access_txt
 	var/datum/bank_account/registered_account
 	var/obj/machinery/paystand/my_store
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 	/// Registered owner's age.
@@ -138,6 +145,11 @@
 	var/icon/cached_flat_icon
 	var/registered_age = 13 // default age for ss13 players
 >>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
+=======
+	var/uses_overlays = TRUE
+	var/icon/cached_flat_icon
+	var/registered_age = 13 // default age for ss13 players
+>>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
 
 /obj/item/card/id/Initialize(mapload)
 	. = ..()
@@ -152,6 +164,7 @@
 		my_store.my_card = null
 	return ..()
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 /obj/item/card/id/get_id_examine_strings(mob/user)
@@ -435,6 +448,8 @@
 >>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
 =======
 >>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
+=======
+>>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
 /obj/item/card/id/attack_self(mob/user)
 	if(Adjacent(user))
 		var/minor
@@ -647,6 +662,7 @@
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 /// Updates the name based on the card's vars and state.
 /obj/item/card/id/proc/update_label()
 	var/name_string = registered_name ? "[registered_name]'s ID Card" : initial(name)
@@ -715,11 +731,16 @@
 =======
 =======
 >>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
+=======
+>>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
 /obj/item/card/id/proc/get_cached_flat_icon()
 	if(!cached_flat_icon)
 		cached_flat_icon = getFlatIcon(src)
 	return cached_flat_icon
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
+=======
 >>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
 =======
 >>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
@@ -736,6 +757,7 @@ update_label()
 	Sets the id name to whatever registered_name and assignment is
 */
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 	/// An overlay icon state for when the card is assigned to a name. Usually manifests itself as a little scribble to the right of the job icon.
@@ -973,6 +995,146 @@ update_label()
 	uses_overlays = FALSE
 	registered_age = null
 
+=======
+/obj/item/card/id/proc/update_label()
+	var/blank = !registered_name
+	name = "[blank ? id_type_name : "[registered_name]'s ID Card"][(!assignment) ? "" : " ([assignment])"]"
+	update_appearance()
+
+/obj/item/card/id/silver
+	name = "silver identification card"
+	id_type_name = "silver identification card"
+	desc = "A silver card which shows honour and dedication."
+	icon_state = "silver"
+	inhand_icon_state = "silver_id"
+	lefthand_file = 'icons/mob/inhands/equipment/idcards_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/equipment/idcards_righthand.dmi'
+
+/obj/item/card/id/silver/reaper
+	name = "Thirteen's ID Card (Reaper)"
+	access = list(ACCESS_MAINT_TUNNELS)
+	assignment = "Reaper"
+	registered_name = "Thirteen"
+
+/obj/item/card/id/gold
+	name = "gold identification card"
+	id_type_name = "gold identification card"
+	desc = "A golden card which shows power and might."
+	icon_state = "gold"
+	inhand_icon_state = "gold_id"
+	lefthand_file = 'icons/mob/inhands/equipment/idcards_lefthand.dmi'
+	righthand_file = 'icons/mob/inhands/equipment/idcards_righthand.dmi'
+
+/obj/item/card/id/syndicate
+	name = "agent card"
+	access = list(ACCESS_MAINT_TUNNELS, ACCESS_SYNDICATE)
+	sticky_access = list(ACCESS_SYNDICATE)
+	///Can anyone forge the ID or just syndicate?
+	var/anyone = FALSE
+	///have we set a custom name and job assignment, or will we use what we're given when we chameleon change?
+	var/forged = FALSE
+
+/obj/item/card/id/syndicate/Initialize()
+	. = ..()
+	var/datum/action/item_action/chameleon/change/id/chameleon_action = new(src)
+	chameleon_action.chameleon_type = /obj/item/card/id
+	chameleon_action.chameleon_name = "ID Card"
+	chameleon_action.initialize_disguises()
+
+/obj/item/card/id/syndicate/afterattack(obj/item/O, mob/user, proximity)
+	if(!proximity)
+		return
+	if(istype(O, /obj/item/card/id))
+		var/obj/item/card/id/I = O
+		src.access |= I.access
+		if(isliving(user) && user.mind)
+			if(user.mind.special_role || anyone)
+				to_chat(usr, "<span class='notice'>The card's microscanners activate as you pass it over the ID, copying its access.</span>")
+
+/obj/item/card/id/syndicate/attack_self(mob/user)
+	if(isliving(user) && user.mind)
+		var/first_use = registered_name ? FALSE : TRUE
+		if(!(user.mind.special_role || anyone)) //Unless anyone is allowed, only syndies can use the card, to stop metagaming.
+			if(first_use) //If a non-syndie is the first to forge an unassigned agent ID, then anyone can forge it.
+				anyone = TRUE
+			else
+				return ..()
+
+		var/popup_input = alert(user, "Choose Action", "Agent ID", "Show", "Forge/Reset", "Change Account ID")
+		if(user.incapacitated())
+			return
+		if(popup_input == "Forge/Reset" && !forged)
+			var/input_name = stripped_input(user, "What name would you like to put on this card? Leave blank to randomise.", "Agent card name", registered_name ? registered_name : (ishuman(user) ? user.real_name : user.name), MAX_NAME_LEN)
+			input_name = sanitize_name(input_name)
+			if(!input_name)
+				// Invalid/blank names give a randomly generated one.
+				if(user.gender == MALE)
+					input_name = "[pick(GLOB.first_names_male)] [pick(GLOB.last_names)]"
+				else if(user.gender == FEMALE)
+					input_name = "[pick(GLOB.first_names_female)] [pick(GLOB.last_names)]"
+				else
+					input_name = "[pick(GLOB.first_names)] [pick(GLOB.last_names)]"
+
+			var/target_occupation = stripped_input(user, "What occupation would you like to put on this card?\nNote: This will not grant any access levels other than Maintenance.", "Agent card job assignment", assignment ? assignment : "Assistant", MAX_MESSAGE_LEN)
+			if(!target_occupation)
+				return
+
+			var/newAge = input(user, "Choose the ID's age:\n([AGE_MIN]-[AGE_MAX])", "Agent card age") as num|null
+			if(newAge)
+				registered_age = max(round(text2num(newAge)), 0)
+
+			registered_name = input_name
+			assignment = target_occupation
+			update_label()
+			forged = TRUE
+			to_chat(user, "<span class='notice'>You successfully forge the ID card.</span>")
+			log_game("[key_name(user)] has forged \the [initial(name)] with name \"[registered_name]\" and occupation \"[assignment]\".")
+
+			// First time use automatically sets the account id to the user.
+			if (first_use && !registered_account)
+				if(ishuman(user))
+					var/mob/living/carbon/human/accountowner = user
+
+					var/datum/bank_account/account = SSeconomy.bank_accounts_by_id["[accountowner.account_id]"]
+					if(account)
+						account.bank_cards += src
+						registered_account = account
+						to_chat(user, "<span class='notice'>Your account number has been automatically assigned.</span>")
+			return
+		else if (popup_input == "Forge/Reset" && forged)
+			registered_name = initial(registered_name)
+			assignment = initial(assignment)
+			log_game("[key_name(user)] has reset \the [initial(name)] named \"[src]\" to default.")
+			update_label()
+			forged = FALSE
+			to_chat(user, "<span class='notice'>You successfully reset the ID card.</span>")
+			return
+		else if (popup_input == "Change Account ID")
+			set_new_account(user)
+			return
+	return ..()
+
+/obj/item/card/id/syndicate/anyone
+	anyone = TRUE
+
+/obj/item/card/id/syndicate/nuke_leader
+	name = "lead agent card"
+	access = list(ACCESS_MAINT_TUNNELS, ACCESS_SYNDICATE, ACCESS_SYNDICATE_LEADER)
+	sticky_access = list(ACCESS_SYNDICATE, ACCESS_SYNDICATE_LEADER)
+
+/obj/item/card/id/syndicate_command
+	name = "syndicate ID card"
+	id_type_name = "syndicate ID card"
+	desc = "An ID straight from the Syndicate."
+	registered_name = "Syndicate"
+	assignment = "Syndicate Overlord"
+	icon_state = "syndie"
+	access = list(ACCESS_SYNDICATE)
+	sticky_access = list(ACCESS_SYNDICATE)
+	uses_overlays = FALSE
+	registered_age = null
+
+>>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
 /obj/item/card/id/syndicate_command/crew_id
 	name = "syndicate ID card"
 	id_type_name = "syndicate ID card"
@@ -983,6 +1145,7 @@ update_label()
 	access = list(ACCESS_SYNDICATE, ACCESS_ROBOTICS)
 	sticky_access = list(ACCESS_SYNDICATE)
 	uses_overlays = FALSE
+<<<<<<< HEAD
 
 =======
 /obj/item/card/id/proc/update_label()
@@ -1146,6 +1309,20 @@ update_label()
 	sticky_access = list(ACCESS_SYNDICATE)
 	uses_overlays = FALSE
 
+=======
+
+/obj/item/card/id/syndicate_command/captain_id
+	name = "syndicate captain ID card"
+	id_type_name = "syndicate captain ID card"
+	desc = "An ID straight from the Syndicate."
+	registered_name = "Syndicate"
+	assignment = "Syndicate Ship Captain"
+	icon_state = "syndie"
+	access = list(ACCESS_SYNDICATE, ACCESS_ROBOTICS)
+	sticky_access = list(ACCESS_SYNDICATE)
+	uses_overlays = FALSE
+
+>>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
 /obj/item/card/id/captains_spare
 	name = "captain's spare ID"
 	id_type_name = "captain's spare ID"
@@ -1212,24 +1389,41 @@ update_label()
 	registered_name = "Engineering Response Officer"
 	assignment = "Engineering Response Officer"
 	icon_state = "ert_engineer"
+<<<<<<< HEAD
 
 /obj/item/card/id/ert/engineer/Initialize()
 	access = get_all_accesses()+get_ert_access("eng")-ACCESS_CHANGE_IDS
 	. = ..()
 
+=======
+
+/obj/item/card/id/ert/engineer/Initialize()
+	access = get_all_accesses()+get_ert_access("eng")-ACCESS_CHANGE_IDS
+	. = ..()
+
+>>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
 /obj/item/card/id/ert/medical
 	registered_name = "Medical Response Officer"
 	assignment = "Medical Response Officer"
 	icon_state = "ert_medic"
+<<<<<<< HEAD
 
 /obj/item/card/id/ert/medical/Initialize()
 	access = get_all_accesses()+get_ert_access("med")-ACCESS_CHANGE_IDS
 	. = ..()
 
+=======
+
+/obj/item/card/id/ert/medical/Initialize()
+	access = get_all_accesses()+get_ert_access("med")-ACCESS_CHANGE_IDS
+	. = ..()
+
+>>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
 /obj/item/card/id/ert/chaplain
 	registered_name = "Religious Response Officer"
 	assignment = "Religious Response Officer"
 	icon_state = "ert_chaplain"
+<<<<<<< HEAD
 <<<<<<< HEAD
 
 /obj/item/card/id/ert/chaplain/Initialize()
@@ -1243,10 +1437,18 @@ update_label()
 	. = ..()
 
 >>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
+=======
+
+/obj/item/card/id/ert/chaplain/Initialize()
+	access = get_all_accesses()+get_ert_access("sec")-ACCESS_CHANGE_IDS
+	. = ..()
+
+>>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
 /obj/item/card/id/ert/janitor
 	registered_name = "Janitorial Response Officer"
 	assignment = "Janitorial Response Officer"
 	icon_state = "ert_janitor"
+<<<<<<< HEAD
 <<<<<<< HEAD
 
 /obj/item/card/id/ert/janitor/Initialize()
@@ -1255,10 +1457,16 @@ update_label()
 
 =======
 
+=======
+
+>>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
 /obj/item/card/id/ert/janitor/Initialize()
 	access = get_all_accesses()
 	. = ..()
 
+<<<<<<< HEAD
+>>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
+=======
 >>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
 /obj/item/card/id/ert/clown
 	registered_name = "Entertainment Response Officer"
@@ -1347,6 +1555,7 @@ update_label()
 	name = "mining ID"
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	trim = /datum/id_trim/job/shaft_miner/spare
 
 /obj/item/card/id/advanced/highlander
@@ -1364,6 +1573,9 @@ update_label()
 	desc = "A highly advanced chameleon ID card. Touch this card on another ID card to choose which accesses to copy."
 	trim = /datum/id_trim/chameleon
 	wildcard_slots = WILDCARD_LIMIT_CHAMELEON
+=======
+	access = list(ACCESS_MINING, ACCESS_MINING_STATION, ACCESS_MECH_MINING, ACCESS_MAILSORTING, ACCESS_MINERAL_STOREROOM)
+>>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
 =======
 	access = list(ACCESS_MINING, ACCESS_MINING_STATION, ACCESS_MECH_MINING, ACCESS_MAILSORTING, ACCESS_MINERAL_STOREROOM)
 >>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
@@ -1447,6 +1659,7 @@ update_label()
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 				update_label()
 				update_icon()
 				forged = TRUE
@@ -1518,6 +1731,15 @@ update_label()
 
 #undef INTERN_THRESHOLD_FALLBACK_HOURS
 #undef ID_ICON_BORDERS
+=======
+/obj/item/card/id/departmental_budget/car
+	department_ID = ACCOUNT_CAR
+	department_name = ACCOUNT_CAR_NAME
+	icon_state = "car_budget" //saving up for a new tesla
+
+/obj/item/card/id/departmental_budget/AltClick(mob/living/user)
+	registered_account.bank_card_talk("<span class='warning'>Withdrawing is not compatible with this card design.</span>", TRUE) //prevents the vault bank machine being useless and putting money from the budget to your card to go over personal crates
+>>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
 =======
 /obj/item/card/id/departmental_budget/car
 	department_ID = ACCOUNT_CAR

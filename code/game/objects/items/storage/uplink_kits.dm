@@ -115,6 +115,7 @@
 			new /obj/item/clothing/glasses/thermal/syndi(src)
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 			new /obj/item/card/id/advanced/chameleon(src)
 =======
 			new /obj/item/card/id/syndicate(src)
@@ -124,6 +125,11 @@
 >>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
 
 		if(KIT_LORD_SINGULOTH) //can't loose the goose anymore without SM :(
+=======
+			new /obj/item/card/id/syndicate(src)
+
+		if("lordsingulo")
+>>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
 			new /obj/item/sbeacondrop(src)
 			new /obj/item/clothing/suit/space/syndicate/black/red(src)
 			new /obj/item/clothing/head/helmet/space/syndicate/black/red(src)
@@ -199,7 +205,11 @@
 			new /obj/item/clothing/suit/hooded/chaplain_hoodie(src)
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 			new /obj/item/card/id/advanced/chameleon(src)
+=======
+			new /obj/item/card/id/syndicate(src)
+>>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
 =======
 			new /obj/item/card/id/syndicate(src)
 >>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))

@@ -128,9 +128,12 @@
 	r_pocket = /obj/item/restraints/handcuffs/cable
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	id = /obj/item/card/id/advanced
 	r_hand = /obj/item/gun/ballistic/shotgun/hook
 =======
+=======
+>>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
 =======
 >>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
 	id = /obj/item/card/id

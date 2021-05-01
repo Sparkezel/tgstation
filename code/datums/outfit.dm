@@ -80,6 +80,9 @@
 	/// Type path of item to go in the idcard slot
 	var/id = null
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
+=======
 >>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
 =======
 >>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
@@ -202,10 +205,13 @@
 		H.equip_to_slot_or_del(new id(H),ITEM_SLOT_ID, TRUE)
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	if(!visualsOnly && id_trim && H.wear_id)
 		var/obj/item/card/id/id_card = H.wear_id
 		if(istype(id_card) && !SSid_access.apply_trim_to_card(id_card, id_trim))
 			WARNING("Unable to apply trim [id_trim] to [id_card] in outfit [name].")
+=======
+>>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
 =======
 >>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
 =======

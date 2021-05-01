@@ -78,6 +78,7 @@
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	var/holder_loc = holder.loc
 	if(ishuman(holder_loc))
 		var/mob/living/carbon/human/human_wearer = holder_loc
@@ -85,6 +86,8 @@
 			human_wearer.sec_hud_set_ID()
 	holder.update_slot_icon()
 
+=======
+>>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
 =======
 >>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
 =======
@@ -117,6 +120,9 @@
 		var/mob/living/carbon/human/human_user = user
 		human_user.sec_hud_set_ID()
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
+=======
 >>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
 =======
 >>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))

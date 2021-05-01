@@ -19,6 +19,9 @@
 	back = /obj/item/storage/backpack/satchel/leather
 	id = /obj/item/card/id/centcom
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
+=======
 >>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
 =======
 >>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
@@ -166,6 +169,9 @@
 	suit_store = /obj/item/tank/internals/oxygen
 	id = /obj/item/card/id
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
+=======
 >>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
 =======
 >>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
@@ -186,9 +192,12 @@
 	gloves = /obj/item/clothing/gloves/color/black
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	head = /obj/item/clothing/head/collectable/tophat
 	shoes = /obj/item/clothing/shoes/laceup
 =======
+=======
+>>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
 =======
 >>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
 
@@ -204,6 +213,9 @@
 		outfit_id.assignment = scale_assignment
 		outfit_id.update_label()
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
+=======
 >>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
 =======
 >>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
@@ -221,6 +233,9 @@
 
 	scale_assignment = "Silver Scale VIP"
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
+=======
 >>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
 =======
 >>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
@@ -241,6 +256,10 @@
 	r_pocket = /obj/item/bikehorn
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+	id = /obj/item/card/id
+>>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
 =======
 	id = /obj/item/card/id
 >>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
@@ -296,6 +315,11 @@
 	l_hand = /obj/item/storage/secure/briefcase
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+	id = /obj/item/card/id/syndicate
+	belt = /obj/item/pda/heads
+>>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
 =======
 	id = /obj/item/card/id/syndicate
 	belt = /obj/item/pda/heads
@@ -356,6 +380,9 @@
 	back = /obj/item/storage/backpack/satchel/leather
 	id = /obj/item/card/id/centcom
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
+=======
 >>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
 =======
 >>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
@@ -443,6 +470,9 @@
 
 	id = /obj/item/card/id/centcom
 <<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
+=======
 >>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
 =======
 >>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
@@ -473,6 +503,10 @@
 	l_hand = /obj/item/gun/ballistic/automatic/tommygun
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+	id = /obj/item/card/id
+>>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
 =======
 	id = /obj/item/card/id
 >>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
@@ -582,8 +616,11 @@
 	shoes = /obj/item/clothing/shoes/magboots/advance
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
+=======
+>>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
 =======
 >>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
 	id = /obj/item/card/id/debug
@@ -623,8 +660,11 @@
 	shoes = /obj/item/clothing/shoes/magboots/advance
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
+=======
+>>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
 =======
 >>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
 	id = /obj/item/card/id/debug
