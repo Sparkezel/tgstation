@@ -26,8 +26,6 @@
 
 	uniform = /obj/item/clothing/under/color/prisoner
 	shoes = /obj/item/clothing/shoes/sneakers/orange
-	id = /obj/item/card/id/advanced/prisoner
+	id = /obj/item/card/id/prisoner
 	ears = null
 	belt = null
-
-	id_trim = /datum/id_trim/job/prisoner

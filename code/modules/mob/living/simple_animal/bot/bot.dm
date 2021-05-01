@@ -152,10 +152,9 @@
 /mob/living/simple_animal/bot/Initialize()
 	. = ..()
 	GLOB.bots_list += src
-	// Give bots a fancy new ID card that can hold any access.
-	access_card = new /obj/item/card/id/advanced/simple_bot(src)
-	// This access is so bots can be immediately set to patrol and leave Robotics, instead of having to be let out first.
-	access_card.set_access(list(ACCESS_ROBOTICS))
+	access_card = new /obj/item/card/id(src)
+//This access is so bots can be immediately set to patrol and leave Robotics, instead of having to be let out first.
+	access_card.access += ACCESS_ROBOTICS
 	set_custom_texts()
 	Radio = new/obj/item/radio(src)
 	if(radio_key)
@@ -553,13 +552,21 @@ Pass a positive integer as an argument to override a bot's default speed.
 
 /mob/living/simple_animal/bot/proc/check_bot_access()
 	if(mode != BOT_SUMMON && mode != BOT_RESPONDING)
-		access_card.set_access(prev_access)
+		access_card.access = prev_access
 
 /mob/living/simple_animal/bot/proc/call_bot(caller, turf/waypoint, message=TRUE)
 	bot_reset() //Reset a bot before setting it to call mode.
 
+<<<<<<< HEAD
 	//For giving the bot temporary all-access. This method is bad and makes me feel bad. Refactoring access to a component is for another PR.
 	var/obj/item/card/id/all_access = new /obj/item/card/id/advanced/gold/captains_spare()
+=======
+	//For giving the bot temporary all-access.
+	var/obj/item/card/id/all_access = new /obj/item/card/id
+	var/datum/job/captain/All = new/datum/job/captain
+	all_access.access = All.get_access()
+
+>>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
 	set_path(get_path_to(src, waypoint, 200, id=all_access))
 	qdel(all_access)
 	calling_ai = caller //Link the AI to the bot!
@@ -603,7 +610,7 @@ Pass a positive integer as an argument to override a bot's default speed.
 	set_path(null)
 	summon_target = null
 	pathset = 0
-	access_card.set_access(prev_access)
+	access_card.access = prev_access
 	tries = 0
 	mode = BOT_IDLE
 	diag_hud_set_botstat()
@@ -741,7 +748,7 @@ Pass a positive integer as an argument to override a bot's default speed.
 			bot_reset()
 			summon_target = get_turf(user)
 			if(user_access.len != 0)
-				access_card.set_access(user_access + prev_access) //Adds the user's access, if any.
+				access_card.access = user_access + prev_access //Adds the user's access, if any.
 			mode = BOT_SUMMON
 			speak("Responding.", radio_channel)
 
@@ -996,9 +1003,13 @@ Pass a positive integer as an argument to override a bot's default speed.
 	. = ..()
 	if(!. || !client)
 		return FALSE
+<<<<<<< HEAD
 	// If we have any bonus player accesses, add them to our internal ID card.
 	if(length(player_access))
 		access_card.add_access(player_access)
+=======
+	access_card.access += player_access
+>>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
 	diag_hud_set_botmode()
 
 /mob/living/simple_animal/bot/Logout()

@@ -644,7 +644,6 @@
 	no_drops += W
 	W.registered_name = H.real_name
 	W.update_label()
-	W.update_icon()
 
 	no_drops += H.get_item_by_slot(ITEM_SLOT_OCLOTHING)
 	no_drops += H.get_item_by_slot(ITEM_SLOT_GLOVES)
@@ -664,7 +663,11 @@
 	r_hand = /obj/item/gun/ballistic/automatic/laser/ctf/red
 	l_pocket = /obj/item/ammo_box/magazine/recharge/ctf/red
 	r_pocket = /obj/item/ammo_box/magazine/recharge/ctf/red
+<<<<<<< HEAD:code/modules/capture_the_flag/capture_the_flag.dm
 	id = /obj/item/card/id/red //it's red
+=======
+	id = /obj/item/card/id/syndicate_command //it's red
+>>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910)):code/modules/awaymissions/capture_the_flag.dm
 
 /datum/outfit/ctf/red/instagib
 	r_hand = /obj/item/gun/energy/laser/instakill/red
@@ -675,7 +678,11 @@
 	r_hand = /obj/item/gun/ballistic/automatic/laser/ctf/blue
 	l_pocket = /obj/item/ammo_box/magazine/recharge/ctf/blue
 	r_pocket = /obj/item/ammo_box/magazine/recharge/ctf/blue
+<<<<<<< HEAD:code/modules/capture_the_flag/capture_the_flag.dm
 	id = /obj/item/card/id/blue //it's blue
+=======
+	id = /obj/item/card/id/centcom //it's blue
+>>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910)):code/modules/awaymissions/capture_the_flag.dm
 
 /datum/outfit/ctf/blue/instagib
 	r_hand = /obj/item/gun/energy/laser/instakill/blue

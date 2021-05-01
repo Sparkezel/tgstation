@@ -14,15 +14,22 @@
 	mask = /obj/item/clothing/mask/cigarette/cigar/havana
 	shoes = /obj/item/clothing/shoes/combat/swat
 	r_pocket = /obj/item/lighter
+<<<<<<< HEAD
+=======
+	back = /obj/item/storage/backpack/satchel/leather
+	id = /obj/item/card/id/centcom
+>>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
 
 /datum/outfit/centcom/spec_ops/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	if(visualsOnly)
 		return
 
 	var/obj/item/card/id/W = H.wear_id
+	W.access = get_all_accesses()
+	W.access += get_centcom_access("Special Ops Officer")
+	W.assignment = "Special Ops Officer"
 	W.registered_name = H.real_name
 	W.update_label()
-	W.update_icon()
 
 	var/obj/item/radio/headset/R = H.ears
 	R.set_frequency(FREQ_CENTCOM)
@@ -137,7 +144,6 @@
 	if(outfit_id)
 		outfit_id.registered_name = equipped.real_name
 		outfit_id.update_label()
-		outfit_id.update_icon()
 
 /datum/outfit/pirate/captain
 	name = "Space Pirate Captain"
@@ -152,6 +158,11 @@
 	suit_store = /obj/item/tank/internals/oxygen
 	head = /obj/item/clothing/head/helmet/space/pirate/bandana
 	mask = /obj/item/clothing/mask/breath
+<<<<<<< HEAD
+=======
+	suit_store = /obj/item/tank/internals/oxygen
+	id = /obj/item/card/id
+>>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
 
 /datum/outfit/pirate/space/captain
 	name = "Space Pirate Captain (EVA)"
@@ -167,8 +178,23 @@
 	suit = /obj/item/clothing/suit/armor/vest/alt
 	glasses = /obj/item/clothing/glasses/monocle
 	gloves = /obj/item/clothing/gloves/color/black
+<<<<<<< HEAD
 	head = /obj/item/clothing/head/collectable/tophat
 	shoes = /obj/item/clothing/shoes/laceup
+=======
+
+	id = /obj/item/card/id/silver
+
+	///special fluff for the ID's job
+	var/scale_assignment = "Silver Scale Member"
+
+/datum/outfit/pirate/silverscale/post_equip(mob/living/carbon/human/equipped)
+	..()
+	var/obj/item/card/id/outfit_id = equipped.wear_id
+	if(outfit_id)
+		outfit_id.assignment = scale_assignment
+		outfit_id.update_label()
+>>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
 
 /datum/outfit/pirate/silverscale/captain
 	name = "Silver Scale Captain"
@@ -177,6 +203,12 @@
 	head = /obj/item/clothing/head/crown
 	mask = /obj/item/clothing/mask/cigarette/cigar/havana
 	l_pocket = /obj/item/lighter
+<<<<<<< HEAD
+=======
+	head = /obj/item/clothing/head/crown
+
+	scale_assignment = "Silver Scale VIP"
+>>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
 
 /datum/outfit/tunnel_clown
 	name = "Tunnel Clown"
@@ -192,6 +224,10 @@
 	shoes = /obj/item/clothing/shoes/clown_shoes
 	l_pocket = /obj/item/food/grown/banana
 	r_pocket = /obj/item/bikehorn
+<<<<<<< HEAD
+=======
+	id = /obj/item/card/id
+>>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
 	l_hand = /obj/item/fireaxe
 
 /datum/outfit/tunnel_clown/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
@@ -199,9 +235,10 @@
 		return
 
 	var/obj/item/card/id/W = H.wear_id
+	W.access = get_all_accesses()
+	W.assignment = "Tunnel Clown!"
 	W.registered_name = H.real_name
 	W.update_label()
-	W.update_icon()
 
 /datum/outfit/psycho
 	name = "Masked Killer"
@@ -238,6 +275,11 @@
 	shoes = /obj/item/clothing/shoes/sneakers/black
 	l_pocket = /obj/item/melee/transforming/energy/sword/saber
 	l_hand = /obj/item/storage/secure/briefcase
+<<<<<<< HEAD
+=======
+	id = /obj/item/card/id/syndicate
+	belt = /obj/item/pda/heads
+>>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
 
 /datum/outfit/assassin/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	var/obj/item/clothing/under/U = H.w_uniform
@@ -262,10 +304,11 @@
 	pda.ownjob = "Reaper"
 	pda.update_label()
 
-	var/obj/item/card/id/W = H.wear_id
+	var/obj/item/card/id/syndicate/W = H.wear_id
+	W.access = get_all_accesses()
+	W.assignment = "Reaper"
 	W.registered_name = H.real_name
 	W.update_label()
-	W.update_icon()
 
 /datum/outfit/centcom/commander
 	name = "CentCom Commander"
@@ -283,16 +326,23 @@
 	mask = /obj/item/clothing/mask/cigarette/cigar/cohiba
 	shoes = /obj/item/clothing/shoes/combat/swat
 	l_pocket = /obj/item/ammo_box/a357
+<<<<<<< HEAD
 	r_pocket = /obj/item/lighter
+=======
+	back = /obj/item/storage/backpack/satchel/leather
+	id = /obj/item/card/id/centcom
+>>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
 
 /datum/outfit/centcom/commander/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	if(visualsOnly)
 		return
 
 	var/obj/item/card/id/W = H.wear_id
+	W.access = get_all_accesses()
+	W.access += get_centcom_access("CentCom Commander")
+	W.assignment = "CentCom Commander"
 	W.registered_name = H.real_name
 	W.update_label()
-	W.update_icon()
 	..()
 
 /datum/outfit/ghost_cultist
@@ -356,21 +406,27 @@
 	suit = /obj/item/clothing/suit/pirate/captain
 	back = /obj/item/storage/backpack/satchel/leather
 	belt = /obj/item/gun/ballistic/revolver/mateba
+<<<<<<< HEAD
 	ears = /obj/item/radio/headset/headset_cent
 	glasses = /obj/item/clothing/glasses/thermal/eyepatch
 	gloves = /obj/item/clothing/gloves/tackler/combat/insulated
 	head = /obj/item/clothing/head/pirate/captain
 	shoes = /obj/item/clothing/shoes/combat
+=======
+
+	id = /obj/item/card/id/centcom
+>>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
 
 /datum/outfit/centcom/soviet/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	if(visualsOnly)
 		return
 
 	var/obj/item/card/id/W = H.wear_id
-
+	W.access = get_all_accesses()
+	W.access += get_centcom_access("Admiral")
+	W.assignment = "Admiral"
 	W.registered_name = H.real_name
 	W.update_label()
-	W.update_icon()
 	..()
 
 /datum/outfit/mobster
@@ -385,16 +441,79 @@
 	head = /obj/item/clothing/head/fedora
 	shoes = /obj/item/clothing/shoes/laceup
 	l_hand = /obj/item/gun/ballistic/automatic/tommygun
+<<<<<<< HEAD
+=======
+	id = /obj/item/card/id
+>>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
 
 /datum/outfit/mobster/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	if(visualsOnly)
 		return
 
 	var/obj/item/card/id/W = H.wear_id
+	W.assignment = "Assistant"
 	W.registered_name = H.real_name
 	W.update_label()
-	W.update_icon()
 
+<<<<<<< HEAD
+=======
+/datum/outfit/plasmaman
+	name = "Plasmaman"
+
+	head = /obj/item/clothing/head/helmet/space/plasmaman
+	uniform = /obj/item/clothing/under/plasmaman
+	r_hand= /obj/item/tank/internals/plasmaman/belt/full
+	mask = /obj/item/clothing/mask/breath
+	gloves = /obj/item/clothing/gloves/color/plasmaman
+
+
+/datum/outfit/centcom/death_commando
+	name = "Death Commando"
+
+	uniform = /obj/item/clothing/under/rank/centcom/commander
+	suit = /obj/item/clothing/suit/space/hardsuit/deathsquad
+	shoes = /obj/item/clothing/shoes/combat/swat
+	gloves = /obj/item/clothing/gloves/tackler/combat/insulated
+	mask = /obj/item/clothing/mask/gas/sechailer/swat
+	glasses = /obj/item/clothing/glasses/hud/toggle/thermal
+	back = /obj/item/storage/backpack/security
+	l_pocket = /obj/item/melee/transforming/energy/sword/saber
+	r_pocket = /obj/item/shield/energy
+	suit_store = /obj/item/tank/internals/emergency_oxygen/double
+	belt = /obj/item/gun/ballistic/revolver/mateba
+	l_hand = /obj/item/gun/energy/pulse/loyalpin
+	id = /obj/item/card/id/ert/deathsquad
+	ears = /obj/item/radio/headset/headset_cent/alt
+
+	skillchips = list(/obj/item/skillchip/disk_verifier)
+
+	backpack_contents = list(/obj/item/storage/box/survival/engineer=1,\
+		/obj/item/ammo_box/a357=1,\
+		/obj/item/storage/firstaid/regular=1,\
+		/obj/item/storage/box/flashbangs=1,\
+		/obj/item/flashlight=1,\
+		/obj/item/grenade/c4/x4=1)
+
+/datum/outfit/centcom/death_commando/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
+	if(visualsOnly)
+		return
+
+	var/obj/item/radio/R = H.ears
+	R.set_frequency(FREQ_CENTCOM)
+	R.freqlock = TRUE
+	var/obj/item/card/id/W = H.wear_id
+	W.access = get_all_accesses()//They get full station access.
+	W.access += get_centcom_access("Death Commando")//Let's add their alloted CentCom access.
+	W.assignment = "Death Commando"
+	W.registered_name = H.real_name
+	W.update_label()
+	..()
+
+/datum/outfit/centcom/death_commando/officer
+	name = "Death Commando Officer"
+	head = /obj/item/clothing/head/helmet/space/beret
+
+>>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
 /datum/outfit/chrono_agent
 	name = "Timeline Eradication Agent"
 
@@ -427,7 +546,13 @@
 	gloves = /obj/item/clothing/gloves/combat
 	mask = /obj/item/clothing/mask/gas/welding/up
 	shoes = /obj/item/clothing/shoes/magboots/advance
+<<<<<<< HEAD
 
+=======
+	id = /obj/item/card/id/debug
+	suit_store = /obj/item/tank/internals/oxygen
+	back = /obj/item/storage/backpack/holding
+>>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
 	box = /obj/item/storage/box/debugtools
 	internals_slot = ITEM_SLOT_SUITSTORE
 
@@ -435,7 +560,6 @@
 	var/obj/item/card/id/W = H.wear_id
 	W.registered_name = H.real_name
 	W.update_label()
-	W.update_icon()
 
 /datum/outfit/admin //for admeem shenanigans and testing things that arent related to equipment, not a subtype of debug just in case debug changes things
 	name = "Admin outfit"
@@ -460,7 +584,13 @@
 	gloves = /obj/item/clothing/gloves/combat
 	mask = /obj/item/clothing/mask/gas/welding/up
 	shoes = /obj/item/clothing/shoes/magboots/advance
+<<<<<<< HEAD
 
+=======
+	id = /obj/item/card/id/debug
+	suit_store = /obj/item/tank/internals/oxygen
+	back = /obj/item/storage/backpack/holding
+>>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
 	box = /obj/item/storage/box/debugtools
 	internals_slot = ITEM_SLOT_SUITSTORE
 
@@ -468,4 +598,3 @@
 	var/obj/item/card/id/W = H.wear_id
 	W.registered_name = H.real_name
 	W.update_label()
-	W.update_icon()

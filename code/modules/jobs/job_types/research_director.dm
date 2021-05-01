@@ -1,4 +1,4 @@
-/datum/job/research_director
+/datum/job/rd
 	title = "Research Director"
 	auto_deadmin_role_flags = DEADMIN_POSITION_HEAD
 	department_head = list("Captain")
@@ -18,12 +18,25 @@
 	plasmaman_outfit = /datum/outfit/plasmaman/research_director
 	departments = DEPARTMENT_SCIENCE | DEPARTMENT_COMMAND
 
+	access = list(ACCESS_RD, ACCESS_HEADS, ACCESS_RND, ACCESS_GENETICS, ACCESS_MORGUE,
+					ACCESS_TOXINS, ACCESS_TELEPORTER, ACCESS_SEC_DOORS, ACCESS_MECH_SCIENCE,
+					ACCESS_RESEARCH, ACCESS_ROBOTICS, ACCESS_XENOBIOLOGY, ACCESS_AI_UPLOAD,
+					ACCESS_RC_ANNOUNCE, ACCESS_KEYCARD_AUTH, ACCESS_GATEWAY, ACCESS_MINERAL_STOREROOM,
+					ACCESS_TECH_STORAGE, ACCESS_MINISAT, ACCESS_MAINT_TUNNELS, ACCESS_NETWORK,
+					ACCESS_TOXINS_STORAGE, ACCESS_AUX_BASE, ACCESS_EVA)
+	minimal_access = list(ACCESS_RD, ACCESS_HEADS, ACCESS_RND, ACCESS_GENETICS, ACCESS_MORGUE,
+						ACCESS_TOXINS, ACCESS_TELEPORTER, ACCESS_SEC_DOORS, ACCESS_MECH_SCIENCE,
+						ACCESS_RESEARCH, ACCESS_ROBOTICS, ACCESS_XENOBIOLOGY, ACCESS_AI_UPLOAD,
+						ACCESS_RC_ANNOUNCE, ACCESS_KEYCARD_AUTH, ACCESS_GATEWAY, ACCESS_MINERAL_STOREROOM,
+						ACCESS_TECH_STORAGE, ACCESS_MINISAT, ACCESS_MAINT_TUNNELS, ACCESS_NETWORK,
+						ACCESS_TOXINS_STORAGE, ACCESS_AUX_BASE, ACCESS_EVA)
 	paycheck = PAYCHECK_COMMAND
 	paycheck_department = ACCOUNT_SCI
 
 	display_order = JOB_DISPLAY_ORDER_RESEARCH_DIRECTOR
 	bounty_types = CIV_JOB_SCI
 
+<<<<<<< HEAD
 	mail_goodies = list(
 		/obj/item/storage/box/monkeycubes = 30,
 		/obj/item/circuitboard/machine/sleeper/party = 3,
@@ -37,11 +50,13 @@
 	if(announce_captaincy)
 		SSticker.OnRoundstart(CALLBACK(GLOBAL_PROC, .proc/minor_announce, "Due to staffing shortages, newly promoted Acting Captain [H.real_name] on deck!"))
 
+=======
+>>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
 /datum/outfit/job/rd
 	name = "Research Director"
-	jobtype = /datum/job/research_director
+	jobtype = /datum/job/rd
 
-	id = /obj/item/card/id/advanced/silver
+	id = /obj/item/card/id/silver
 	belt = /obj/item/pda/heads/rd
 	ears = /obj/item/radio/headset/heads/rd
 	uniform = /obj/item/clothing/under/rank/rnd/research_director
@@ -58,8 +73,6 @@
 	skillchips = list(/obj/item/skillchip/job/research_director)
 
 	chameleon_extras = /obj/item/stamp/rd
-
-	id_trim = /datum/id_trim/job/research_director
 
 /datum/outfit/job/rd/rig
 	name = "Research Director (Hardsuit)"

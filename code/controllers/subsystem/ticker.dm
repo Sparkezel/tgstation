@@ -388,6 +388,7 @@ SUBSYSTEM_DEF(ticker)
 
 
 /datum/controller/subsystem/ticker/proc/equip_characters()
+<<<<<<< HEAD
 	GLOB.security_officer_distribution = decide_security_officer_departments(
 		shuffle(GLOB.new_player_list),
 		shuffle(GLOB.available_depts),
@@ -433,13 +434,25 @@ SUBSYSTEM_DEF(ticker)
 				SSjob.EquipRank(new_player_mob, player_assigned_role, FALSE, player_is_captain)
 				if(CONFIG_GET(flag/roundstart_traits) && ishuman(new_player_human))
 					SSquirks.AssignQuirks(new_player_human, new_player_mob.client, TRUE)
+=======
+	var/captainless=1
+	for(var/i in GLOB.new_player_list)
+		var/mob/dead/new_player/N = i
+		var/mob/living/carbon/human/player = N.new_character
+		if(istype(player) && player.mind && player.mind.assigned_role)
+			if(player.mind.assigned_role == "Captain")
+				captainless=0
+			if(player.mind.assigned_role != player.mind.special_role)
+				SSjob.EquipRank(N, player.mind.assigned_role, 0)
+				if(CONFIG_GET(flag/roundstart_traits) && ishuman(N.new_character))
+					SSquirks.AssignQuirks(N.new_character, N.client, TRUE)
+>>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
 		CHECK_TICK
-
 	if(captainless)
-		for(var/mob/dead/new_player/new_player_mob as anything in GLOB.new_player_list)
-			var/mob/living/carbon/human/new_player_human = new_player_mob.new_character
-			if(new_player_human)
-				to_chat(new_player_mob, "<span class='notice'>Captainship not forced on anyone.</span>")
+		for(var/i in GLOB.new_player_list)
+			var/mob/dead/new_player/N = i
+			if(N.new_character)
+				to_chat(N, "<span class='notice'>Captainship not forced on anyone.</span>")
 			CHECK_TICK
 
 /datum/controller/subsystem/ticker/proc/decide_security_officer_departments(

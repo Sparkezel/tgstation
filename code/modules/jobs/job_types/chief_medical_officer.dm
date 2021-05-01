@@ -1,4 +1,4 @@
-/datum/job/chief_medical_officer
+/datum/job/cmo
 	title = "Chief Medical Officer"
 	department_head = list("Captain")
 	auto_deadmin_role_flags = DEADMIN_POSITION_HEAD
@@ -18,6 +18,12 @@
 	plasmaman_outfit = /datum/outfit/plasmaman/chief_medical_officer
 	departments = DEPARTMENT_MEDICAL | DEPARTMENT_COMMAND
 
+	access = list(ACCESS_MEDICAL, ACCESS_PSYCHOLOGY, ACCESS_MORGUE, ACCESS_PHARMACY, ACCESS_HEADS, ACCESS_MINERAL_STOREROOM,
+			ACCESS_CHEMISTRY, ACCESS_VIROLOGY, ACCESS_CMO, ACCESS_SURGERY, ACCESS_RC_ANNOUNCE, ACCESS_MECH_MEDICAL,
+			ACCESS_KEYCARD_AUTH, ACCESS_SEC_DOORS, ACCESS_MAINT_TUNNELS, ACCESS_EVA, ACCESS_TELEPORTER)
+	minimal_access = list(ACCESS_MEDICAL, ACCESS_PSYCHOLOGY, ACCESS_MORGUE, ACCESS_PHARMACY, ACCESS_HEADS, ACCESS_MINERAL_STOREROOM,
+			ACCESS_CHEMISTRY, ACCESS_VIROLOGY, ACCESS_CMO, ACCESS_SURGERY, ACCESS_RC_ANNOUNCE, ACCESS_MECH_MEDICAL,
+			ACCESS_KEYCARD_AUTH, ACCESS_SEC_DOORS, ACCESS_MAINT_TUNNELS, ACCESS_EVA)
 	paycheck = PAYCHECK_COMMAND
 	paycheck_department = ACCOUNT_MED
 
@@ -26,6 +32,7 @@
 	display_order = JOB_DISPLAY_ORDER_CHIEF_MEDICAL_OFFICER
 	bounty_types = CIV_JOB_MED
 
+<<<<<<< HEAD
 	mail_goodies = list(
 		/obj/effect/spawner/lootdrop/organ_spawner = 10,
 		/obj/effect/spawner/lootdrop/memeorgans = 8,
@@ -39,11 +46,13 @@
 	if(announce_captaincy)
 		SSticker.OnRoundstart(CALLBACK(GLOBAL_PROC, .proc/minor_announce, "Due to staffing shortages, newly promoted Acting Captain [H.real_name] on deck!"))
 
+=======
+>>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
 /datum/outfit/job/cmo
 	name = "Chief Medical Officer"
-	jobtype = /datum/job/chief_medical_officer
+	jobtype = /datum/job/cmo
 
-	id = /obj/item/card/id/advanced/silver
+	id = /obj/item/card/id/silver
 	belt = /obj/item/pda/heads/cmo
 	l_pocket = /obj/item/pinpointer/crew
 	ears = /obj/item/radio/headset/heads/cmo
@@ -62,8 +71,6 @@
 	box = /obj/item/storage/box/survival/medical
 
 	chameleon_extras = list(/obj/item/gun/syringe, /obj/item/stamp/cmo)
-
-	id_trim = /datum/id_trim/job/chief_medical_officer
 
 /datum/outfit/job/cmo/hardsuit
 	name = "Chief Medical Officer (Hardsuit)"

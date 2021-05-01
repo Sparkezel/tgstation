@@ -1,36 +1,43 @@
 import { sortBy } from 'common/collections';
-import { useSharedState } from '../../backend';
-import { Button, Flex, Section, Tabs } from '../../components';
+import { useLocalState } from '../../backend';
+import { Button, Flex, Grid, Section, Tabs } from '../../components';
+
+const diffMap = {
+  0: {
+    icon: 'times-circle',
+    color: 'bad',
+  },
+  1: {
+    icon: 'stop-circle',
+    color: null,
+  },
+  2: {
+    icon: 'check-circle',
+    color: 'good',
+  },
+};
 
 export const AccessList = (props, context) => {
   const {
     accesses = [],
-    wildcardSlots = {},
     selectedList = [],
     accessMod,
-    trimAccess = [],
-    accessFlags = {},
-    accessFlagNames = {},
-    wildcardFlags = {},
-    extraButtons,
-    showBasic,
+    grantAll,
+    denyAll,
+    grantDep,
+    denyDep,
   } = props;
-
   const [
-    wildcardTab,
-    setWildcardTab,
-  ] = useSharedState(context, "wildcardSelected", showBasic ? "None" : Object.keys(wildcardSlots)[0]);
+    selectedAccessName,
+    setSelectedAccessName,
+  ] = useLocalState(context, 'accessName', accesses[0]?.name);
+  const selectedAccess = accesses
+    .find(access => access.name === selectedAccessName);
+  const selectedAccessEntries = sortBy(
+    entry => entry.desc,
+  )(selectedAccess?.accesses || []);
 
-  let selectedWildcard;
-
-  if ((wildcardTab !== "None") && !wildcardSlots[wildcardTab]) {
-    selectedWildcard = showBasic ? "None" : Object.keys(wildcardSlots)[0];
-    setWildcardTab(selectedWildcard);
-  }
-  else {
-    selectedWildcard = wildcardTab;
-  }
-
+<<<<<<< HEAD
   const parsedRegions = [];
   const selectedTrimAccess = [];
   accesses.forEach(region => {
@@ -83,25 +90,34 @@ export const AccessList = (props, context) => {
     regionAccess.forEach(access => {
       if (trimAccess.includes(access.ref)) {
         return;
+=======
+  const checkAccessIcon = accesses => {
+    let oneAccess = false;
+    let oneInaccess = false;
+    for (let element of accesses) {
+      if (selectedList.includes(element.ref)) {
+        oneAccess = true;
+>>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
       }
-      if (accessFlags[access.ref] & wildcardFlags[selectedWildcard]) {
-        parsedRegion.accesses.push(access);
-        if (selectedList.includes(access.ref)) {
-          parsedRegion.hasSelected = true;
-        }
-        else {
-          parsedRegion.allSelected = false;
-        }
+      else {
+        oneInaccess = true;
       }
-    });
-    if (parsedRegion.accesses.length) {
-      parsedRegions.push(parsedRegion);
     }
-  });
+    if (!oneAccess && oneInaccess) {
+      return 0;
+    }
+    else if (oneAccess && oneInaccess) {
+      return 1;
+    }
+    else {
+      return 2;
+    }
+  };
 
   return (
     <Section
       title="Access"
+<<<<<<< HEAD
       buttons={extraButtons} >
       <Flex wrap="wrap">
         <Flex.Item width="100%">
@@ -112,25 +128,76 @@ export const AccessList = (props, context) => {
             basicUsed={selectedTrimAccess.length}
             basicMax={trimAccess.length} />
         </Flex.Item>
+=======
+      buttons={(
+        <>
+          <Button
+            icon="check-double"
+            content="Grant All"
+            color="good"
+            onClick={() => grantAll()} />
+          <Button
+            icon="undo"
+            content="Deny All"
+            color="bad"
+            onClick={() => denyAll()} />
+        </>
+      )}>
+      <Flex>
+>>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
         <Flex.Item>
-          <RegionTabList
-            accesses={parsedRegions} />
+          <Tabs vertical>
+            {accesses.map(access => {
+              const entries = access.accesses || [];
+              const icon = diffMap[checkAccessIcon(entries)].icon;
+              const color = diffMap[checkAccessIcon(entries)].color;
+              return (
+                <Tabs.Tab
+                  key={access.name}
+                  altSelection
+                  color={color}
+                  icon={icon}
+                  selected={access.name === selectedAccessName}
+                  onClick={() => setSelectedAccessName(access.name)}>
+                  {access.name}
+                </Tabs.Tab>
+              );
+            })}
+          </Tabs>
         </Flex.Item>
         <Flex.Item grow={1}>
-          <RegionAccessList
-            accesses={parsedRegions}
-            selectedList={selectedList}
-            accessMod={accessMod}
-            trimAccess={trimAccess}
-            accessFlags={accessFlags}
-            accessFlagNames={accessFlagNames}
-            wildcardSlots={wildcardSlots}
-            showBasic={showBasic} />
+          <Grid>
+            <Grid.Column mr={0}>
+              <Button
+                fluid
+                icon="check"
+                content="Grant Region"
+                color="good"
+                onClick={() => grantDep(selectedAccess.regid)} />
+            </Grid.Column>
+            <Grid.Column ml={0}>
+              <Button
+                fluid
+                icon="times"
+                content="Deny Region"
+                color="bad"
+                onClick={() => denyDep(selectedAccess.regid)} />
+            </Grid.Column>
+          </Grid>
+          {selectedAccessEntries.map(entry => (
+            <Button.Checkbox
+              fluid
+              key={entry.desc}
+              content={entry.desc}
+              checked={selectedList.includes(entry.ref)}
+              onClick={() => accessMod(entry.ref)} />
+          ))}
         </Flex.Item>
       </Flex>
     </Section>
   );
 };
+<<<<<<< HEAD
 
 export const FormatWildcards = (props, context) => {
   const {
@@ -294,3 +361,5 @@ const RegionAccessList = (props, context) => {
     })
   );
 };
+=======
+>>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
