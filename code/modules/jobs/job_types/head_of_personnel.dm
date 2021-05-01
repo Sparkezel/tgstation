@@ -41,6 +41,7 @@
 	display_order = JOB_DISPLAY_ORDER_HEAD_OF_PERSONNEL
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 	mail_goodies = list(
 		/obj/item/card/id/advanced/silver = 10,
 		/obj/item/stack/sheet/bone = 5
@@ -53,6 +54,8 @@
 	if(announce_captaincy)
 		SSticker.OnRoundstart(CALLBACK(GLOBAL_PROC, .proc/minor_announce, "Due to staffing shortages, newly promoted Acting Captain [H.real_name] on deck!"))
 
+=======
+>>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
 =======
 >>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
 /datum/outfit/job/hop
@@ -75,6 +78,7 @@
 	if(locate(/datum/holiday/ianbirthday) in SSevents.holidays)
 		undershirt = /datum/sprite_accessory/undershirt/ian
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 //only pet worth reviving
 /datum/job/hop/get_mail_goodies(mob/recipient)
@@ -106,5 +110,7 @@
 <li>Don't forget to set a custom occupation! SecHUDs now interface direct with the ID card's trim and display the trim's job icon even when a custom assignment is set.</li>
 </ol>
 	"}
+=======
+>>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
 =======
 >>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))

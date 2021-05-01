@@ -46902,6 +46902,18 @@
 /obj/effect/turf_decal/tile/neutral{
 	dir = 4
 	},
+<<<<<<< HEAD
+=======
+/turf/open/floor/wood,
+/area/command/heads_quarters/hop)
+"mpE" = (
+/obj/effect/turf_decal/tile/red{
+	dir = 8
+	},
+/obj/effect/turf_decal/tile/red{
+	dir = 1
+	},
+>>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4{
 	dir = 5

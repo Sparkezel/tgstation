@@ -114,7 +114,11 @@
 			new /obj/item/camera_bug(src)
 			new /obj/item/clothing/glasses/thermal/syndi(src)
 <<<<<<< HEAD
+<<<<<<< HEAD
 			new /obj/item/card/id/advanced/chameleon(src)
+=======
+			new /obj/item/card/id/syndicate(src)
+>>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
 =======
 			new /obj/item/card/id/syndicate(src)
 >>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
@@ -194,7 +198,11 @@
 			new /obj/item/dnainjector/telemut/darkbundle(src)
 			new /obj/item/clothing/suit/hooded/chaplain_hoodie(src)
 <<<<<<< HEAD
+<<<<<<< HEAD
 			new /obj/item/card/id/advanced/chameleon(src)
+=======
+			new /obj/item/card/id/syndicate(src)
+>>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
 =======
 			new /obj/item/card/id/syndicate(src)
 >>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))

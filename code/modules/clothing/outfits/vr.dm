@@ -12,6 +12,9 @@
 	shoes = /obj/item/clothing/shoes/sneakers/black
 	ears = /obj/item/radio/headset
 	id = /obj/item/card/id
+<<<<<<< HEAD
+>>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
+=======
 >>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
 
 /datum/outfit/vr/pre_equip(mob/living/carbon/human/H)
@@ -30,10 +33,14 @@
 	uniform = /obj/item/clothing/under/syndicate
 	back = /obj/item/storage/backpack
 <<<<<<< HEAD
+<<<<<<< HEAD
 	backpack_contents = list(
 		/obj/item/storage/box/survival/syndie = 1,
 		/obj/item/kitchen/knife/combat/survival = 1,
 )
+=======
+	id = /obj/item/card/id/syndicate
+>>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
 =======
 	id = /obj/item/card/id/syndicate
 >>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
@@ -45,6 +52,9 @@
 =======
 	backpack_contents = list(/obj/item/storage/box/survival/syndie=1,\
 		/obj/item/kitchen/knife/combat/survival)
+<<<<<<< HEAD
+>>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
+=======
 >>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
 
 /datum/outfit/vr/syndicate/post_equip(mob/living/carbon/human/H)

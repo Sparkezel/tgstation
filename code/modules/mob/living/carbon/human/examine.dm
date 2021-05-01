@@ -95,8 +95,11 @@
 		. += "[t_He] [t_is] wearing [wear_id.get_examine_string(user)]."
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 		. += wear_id.get_id_examine_strings(user)
 
+=======
+>>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
 =======
 >>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
 	//Status effects

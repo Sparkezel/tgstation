@@ -38,6 +38,7 @@ export const AccessList = (props, context) => {
   )(selectedAccess?.accesses || []);
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   const parsedRegions = [];
   const selectedTrimAccess = [];
   accesses.forEach(region => {
@@ -91,12 +92,17 @@ export const AccessList = (props, context) => {
       if (trimAccess.includes(access.ref)) {
         return;
 =======
+=======
+>>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
   const checkAccessIcon = accesses => {
     let oneAccess = false;
     let oneInaccess = false;
     for (let element of accesses) {
       if (selectedList.includes(element.ref)) {
         oneAccess = true;
+<<<<<<< HEAD
+>>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
+=======
 >>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
       }
       else {
@@ -118,6 +124,7 @@ export const AccessList = (props, context) => {
     <Section
       title="Access"
 <<<<<<< HEAD
+<<<<<<< HEAD
       buttons={extraButtons} >
       <Flex wrap="wrap">
         <Flex.Item width="100%">
@@ -129,6 +136,8 @@ export const AccessList = (props, context) => {
             basicMax={trimAccess.length} />
         </Flex.Item>
 =======
+=======
+>>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
       buttons={(
         <>
           <Button
@@ -144,6 +153,9 @@ export const AccessList = (props, context) => {
         </>
       )}>
       <Flex>
+<<<<<<< HEAD
+>>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
+=======
 >>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
         <Flex.Item>
           <Tabs vertical>
@@ -197,6 +209,7 @@ export const AccessList = (props, context) => {
     </Section>
   );
 };
+<<<<<<< HEAD
 <<<<<<< HEAD
 
 export const FormatWildcards = (props, context) => {
@@ -361,5 +374,7 @@ const RegionAccessList = (props, context) => {
     })
   );
 };
+=======
+>>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
 =======
 >>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))

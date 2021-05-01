@@ -27,6 +27,7 @@
 	departments = DEPARTMENT_COMMAND
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 	family_heirlooms = list(/obj/item/reagent_containers/food/drinks/flask/gold)
 
 	mail_goodies = list(
@@ -37,10 +38,15 @@
 
 /datum/job/captain/announce(mob/living/carbon/human/H, announce_captaincy = TRUE)
 =======
+=======
+>>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
 /datum/job/captain/get_access()
 	return get_all_accesses()
 
 /datum/job/captain/announce(mob/living/carbon/human/H)
+<<<<<<< HEAD
+>>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
+=======
 >>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
 	..()
 	SSticker.OnRoundstart(CALLBACK(GLOBAL_PROC, .proc/minor_announce, "Captain [H.real_name] on deck!"))
@@ -72,6 +78,7 @@
 	chameleon_extras = list(/obj/item/gun/energy/e_gun, /obj/item/stamp/captain)
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 	id_trim = /datum/id_trim/job/captain
 	var/special_charter
 
@@ -97,6 +104,8 @@
 		return
 	celestial_charter.name_type = special_charter
 
+=======
+>>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
 =======
 >>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
 /datum/outfit/job/captain/hardsuit

@@ -95,11 +95,14 @@
 		. += "<span class='notice'>Alt-click to remove the id.</span>"
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 /obj/item/storage/wallet/get_id_examine_strings(mob/user)
 	. = ..()
 	if(front_id)
 		. += front_id.get_id_examine_strings(user)
 
+=======
+>>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
 =======
 >>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
 /obj/item/storage/wallet/GetID()

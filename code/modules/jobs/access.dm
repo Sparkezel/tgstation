@@ -103,6 +103,7 @@
 	return check_access_list(passkey)
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 /// Returns the SecHUD job icon state for whatever this object's ID card is, if it has one.
 /obj/item/proc/get_sechud_job_icon_state()
 	var/obj/item/card/id/id_card = GetID()
@@ -154,6 +155,45 @@
 		if("CentCom Bartender")
 			return list(ACCESS_CENT_GENERAL, ACCESS_CENT_LIVING, ACCESS_CENT_BAR)
 
+=======
+/proc/get_centcom_access(job)
+	switch(job)
+		if("VIP Guest")
+			return list(ACCESS_CENT_GENERAL)
+		if("Custodian")
+			return list(ACCESS_CENT_GENERAL, ACCESS_CENT_LIVING, ACCESS_CENT_STORAGE)
+		if("Thunderdome Overseer")
+			return list(ACCESS_CENT_GENERAL, ACCESS_CENT_THUNDER)
+		if("CentCom Official")
+			return list(ACCESS_CENT_GENERAL, ACCESS_CENT_LIVING)
+		if("CentCom Intern")
+			return list(ACCESS_CENT_GENERAL, ACCESS_CENT_LIVING)
+		if("CentCom Head Intern")
+			return list(ACCESS_CENT_GENERAL, ACCESS_CENT_LIVING)
+		if("Medical Officer")
+			return list(ACCESS_CENT_GENERAL, ACCESS_CENT_LIVING, ACCESS_CENT_MEDICAL)
+		if("Death Commando")
+			return list(ACCESS_CENT_GENERAL, ACCESS_CENT_SPECOPS, ACCESS_CENT_LIVING, ACCESS_CENT_STORAGE)
+		if("Research Officer")
+			return list(ACCESS_CENT_GENERAL, ACCESS_CENT_SPECOPS, ACCESS_CENT_MEDICAL, ACCESS_CENT_TELEPORTER, ACCESS_CENT_STORAGE)
+		if("Special Ops Officer")
+			return get_all_centcom_access()
+		if("Admiral")
+			return get_all_centcom_access()
+		if("CentCom Commander")
+			return get_all_centcom_access()
+		if("Emergency Response Team Commander")
+			return get_ert_access("commander")
+		if("Security Response Officer")
+			return get_ert_access("sec")
+		if("Engineer Response Officer")
+			return get_ert_access("eng")
+		if("Medical Response Officer")
+			return get_ert_access("med")
+		if("CentCom Bartender")
+			return list(ACCESS_CENT_GENERAL, ACCESS_CENT_LIVING, ACCESS_CENT_BAR)
+
+>>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
 /proc/get_all_accesses()
 	return list(ACCESS_SECURITY, ACCESS_SEC_DOORS, ACCESS_BRIG, ACCESS_ARMORY, ACCESS_FORENSICS_LOCKERS, ACCESS_COURT,
 				ACCESS_MEDICAL, ACCESS_GENETICS, ACCESS_MORGUE, ACCESS_RD,
@@ -222,6 +262,9 @@
 			return "Supply"
 		if(7) //command
 			return "Command"
+<<<<<<< HEAD
+>>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
+=======
 >>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
 
 /proc/get_access_desc(A)
@@ -364,6 +407,7 @@
 			return "Auxiliary Base"
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 	// Is this one of the jobs with dedicated HUD icons?
 	if(card_assignment in SSjob.station_jobs)
 		return "hud[ckey(card_assignment)]"
@@ -377,6 +421,8 @@
 	// If none of the above apply, job name is unknown.
 	return "hudunknown"
 =======
+=======
+>>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
 /proc/get_centcom_access_desc(A)
 	switch(A)
 		if(ACCESS_CENT_GENERAL)

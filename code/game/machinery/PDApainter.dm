@@ -38,10 +38,17 @@
 
 	for(var/P in typesof(/obj/item/pda) - blocked)
 		var/obj/item/pda/D = new P
+<<<<<<< HEAD
 
 		//D.name = "PDA Style [colorlist.len+1]" //Gotta set the name, otherwise it all comes up as "PDA"
 		D.name = D.icon_state //PDAs don't have unique names, but using the sprite names works.
 
+=======
+
+		//D.name = "PDA Style [colorlist.len+1]" //Gotta set the name, otherwise it all comes up as "PDA"
+		D.name = D.icon_state //PDAs don't have unique names, but using the sprite names works.
+
+>>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
 		src.colorlist += D
 
 /obj/machinery/pdapainter/Destroy()
@@ -54,6 +61,7 @@
 		storedpda = null
 
 /obj/machinery/pdapainter/contents_explosion(severity, target)
+<<<<<<< HEAD
 <<<<<<< HEAD
 	switch(severity)
 		if(EXPLODE_DEVASTATE)
@@ -71,6 +79,10 @@
 				SSexplosions.low_mov_atom += stored_pda
 			if(stored_id_card)
 				SSexplosions.low_mov_atom += stored_id_card
+=======
+	if(storedpda)
+		storedpda.ex_act(severity, target)
+>>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
 =======
 	if(storedpda)
 		storedpda.ex_act(severity, target)
@@ -98,6 +110,7 @@
 				update_appearance()
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 	if(default_unfasten_wrench(user, O))
 		power_change()
 		return
@@ -110,6 +123,10 @@
 	if(istype(O, /obj/item/pda/chameleon))
 		to_chat(user, "<span class='warning'>The machine rejects your [O]. This PDA does not appear to be compatible with the PDA Painter.</span>")
 		return
+=======
+		else
+			return ..()
+>>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
 =======
 		else
 			return ..()
@@ -140,6 +157,7 @@
 	if(.)
 		return
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 	switch(action)
 		if("eject_pda")
@@ -227,6 +245,28 @@
 	else
 		to_chat(user, "<span class='warning'>[src] is empty!</span>")
 
+=======
+	if(storedpda)
+		if(machine_stat & BROKEN) //otherwise the PDA is stuck until repaired
+			ejectpda()
+			to_chat(user, "<span class='info'>You manage to eject the loaded PDA.</span>")
+		else
+			var/obj/item/pda/P
+			P = input(user, "Select your color!", "PDA Painting") as null|anything in sortNames(colorlist)
+			if(!P)
+				return
+			if(!in_range(src, user))
+				return
+			if(!storedpda)//is the pda still there?
+				return
+			storedpda.icon_state = P.icon_state
+			storedpda.desc = P.desc
+			ejectpda()
+
+	else
+		to_chat(user, "<span class='warning'>[src] is empty!</span>")
+
+>>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
 
 /obj/machinery/pdapainter/verb/ejectpda()
 	set name = "Eject PDA"

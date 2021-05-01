@@ -122,6 +122,7 @@
 	var/obj/item/computer_hardware/card_slot/card_slot2 = all_components[MC_CARD2]
 	var/obj/item/computer_hardware/card_slot/card_slot = all_components[MC_CARD]
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 	var/removed_id = (card_slot2?.try_eject() || card_slot?.try_eject())
 	if(removed_id)
@@ -133,6 +134,9 @@
 		return removed_id
 
 	return ..()
+=======
+	return (card_slot2?.try_eject() || card_slot?.try_eject()) //Try the secondary one first.
+>>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
 =======
 	return (card_slot2?.try_eject() || card_slot?.try_eject()) //Try the secondary one first.
 >>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
@@ -149,11 +153,14 @@
 
 	if((card_slot?.try_insert(inserting_id)) || (card_slot2?.try_insert(inserting_id)))
 <<<<<<< HEAD
+<<<<<<< HEAD
 		if(ishuman(loc))
 			var/mob/living/carbon/human/human_wearer = loc
 			if(human_wearer.wear_id == src)
 				human_wearer.sec_hud_set_ID()
 		update_slot_icon()
+=======
+>>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
 =======
 >>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
 		return TRUE

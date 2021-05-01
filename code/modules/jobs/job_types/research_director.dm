@@ -37,6 +37,7 @@
 	bounty_types = CIV_JOB_SCI
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 	mail_goodies = list(
 		/obj/item/storage/box/monkeycubes = 30,
 		/obj/item/circuitboard/machine/sleeper/party = 3,
@@ -50,6 +51,8 @@
 	if(announce_captaincy)
 		SSticker.OnRoundstart(CALLBACK(GLOBAL_PROC, .proc/minor_announce, "Due to staffing shortages, newly promoted Acting Captain [H.real_name] on deck!"))
 
+=======
+>>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
 =======
 >>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
 /datum/outfit/job/rd

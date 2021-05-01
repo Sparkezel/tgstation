@@ -52,6 +52,9 @@
 	chameleon_extras = /obj/item/gun/syringe
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 	id_trim = /datum/id_trim/job/chemist
+=======
+>>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
 =======
 >>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))

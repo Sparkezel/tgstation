@@ -77,6 +77,7 @@
 	playsound(src, 'sound/machines/terminal_insert_disc.ogg', 50, FALSE)
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 	var/holder_loc = holder.loc
 	if(ishuman(holder_loc))
 		var/mob/living/carbon/human/human_wearer = holder_loc
@@ -84,6 +85,8 @@
 			human_wearer.sec_hud_set_ID()
 	holder.update_slot_icon()
 
+=======
+>>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
 =======
 >>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
 	return TRUE
@@ -113,6 +116,9 @@
 	if(ishuman(user))
 		var/mob/living/carbon/human/human_user = user
 		human_user.sec_hud_set_ID()
+<<<<<<< HEAD
+>>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
+=======
 >>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
 	to_chat(user, "<span class='notice'>You remove the card from \the [src].</span>")
 	playsound(src, 'sound/machines/terminal_insert_disc.ogg', 50, FALSE)

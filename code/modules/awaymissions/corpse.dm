@@ -434,12 +434,15 @@
 	head = /obj/item/clothing/head/helmet/swat/nanotrasen
 	back = /obj/item/storage/backpack/security
 	id = /obj/item/card/id
+<<<<<<< HEAD
 
 /obj/effect/mob_spawn/human/intern //this is specifically the comms intern from the event
 	name = "CentCom Intern"
 	outfit = /datum/outfit/centcom/centcom_intern/unarmed
 	mob_name = "Nameless Intern"
 	mob_gender = MALE
+=======
+>>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
 
 /////////////////Spooky Undead//////////////////////
 //there are living variants of many of these, they're now in ghost_role_spawners.dm

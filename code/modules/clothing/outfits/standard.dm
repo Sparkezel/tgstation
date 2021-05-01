@@ -18,6 +18,9 @@
 =======
 	back = /obj/item/storage/backpack/satchel/leather
 	id = /obj/item/card/id/centcom
+<<<<<<< HEAD
+>>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
+=======
 >>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
 
 /datum/outfit/centcom/spec_ops/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
@@ -162,6 +165,9 @@
 =======
 	suit_store = /obj/item/tank/internals/oxygen
 	id = /obj/item/card/id
+<<<<<<< HEAD
+>>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
+=======
 >>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
 
 /datum/outfit/pirate/space/captain
@@ -179,9 +185,12 @@
 	glasses = /obj/item/clothing/glasses/monocle
 	gloves = /obj/item/clothing/gloves/color/black
 <<<<<<< HEAD
+<<<<<<< HEAD
 	head = /obj/item/clothing/head/collectable/tophat
 	shoes = /obj/item/clothing/shoes/laceup
 =======
+=======
+>>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
 
 	id = /obj/item/card/id/silver
 
@@ -194,6 +203,9 @@
 	if(outfit_id)
 		outfit_id.assignment = scale_assignment
 		outfit_id.update_label()
+<<<<<<< HEAD
+>>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
+=======
 >>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
 
 /datum/outfit/pirate/silverscale/captain
@@ -208,6 +220,9 @@
 	head = /obj/item/clothing/head/crown
 
 	scale_assignment = "Silver Scale VIP"
+<<<<<<< HEAD
+>>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
+=======
 >>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
 
 /datum/outfit/tunnel_clown
@@ -225,6 +240,10 @@
 	l_pocket = /obj/item/food/grown/banana
 	r_pocket = /obj/item/bikehorn
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+	id = /obj/item/card/id
+>>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
 =======
 	id = /obj/item/card/id
 >>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
@@ -276,6 +295,11 @@
 	l_pocket = /obj/item/melee/transforming/energy/sword/saber
 	l_hand = /obj/item/storage/secure/briefcase
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+	id = /obj/item/card/id/syndicate
+	belt = /obj/item/pda/heads
+>>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
 =======
 	id = /obj/item/card/id/syndicate
 	belt = /obj/item/pda/heads
@@ -331,6 +355,9 @@
 =======
 	back = /obj/item/storage/backpack/satchel/leather
 	id = /obj/item/card/id/centcom
+<<<<<<< HEAD
+>>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
+=======
 >>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
 
 /datum/outfit/centcom/commander/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
@@ -415,6 +442,9 @@
 =======
 
 	id = /obj/item/card/id/centcom
+<<<<<<< HEAD
+>>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
+=======
 >>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
 
 /datum/outfit/centcom/soviet/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
@@ -442,6 +472,10 @@
 	shoes = /obj/item/clothing/shoes/laceup
 	l_hand = /obj/item/gun/ballistic/automatic/tommygun
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+	id = /obj/item/card/id
+>>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
 =======
 	id = /obj/item/card/id
 >>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
@@ -547,8 +581,11 @@
 	mask = /obj/item/clothing/mask/gas/welding/up
 	shoes = /obj/item/clothing/shoes/magboots/advance
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
+=======
+>>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
 	id = /obj/item/card/id/debug
 	suit_store = /obj/item/tank/internals/oxygen
 	back = /obj/item/storage/backpack/holding
@@ -585,8 +622,11 @@
 	mask = /obj/item/clothing/mask/gas/welding/up
 	shoes = /obj/item/clothing/shoes/magboots/advance
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
+=======
+>>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
 	id = /obj/item/card/id/debug
 	suit_store = /obj/item/tank/internals/oxygen
 	back = /obj/item/storage/backpack/holding

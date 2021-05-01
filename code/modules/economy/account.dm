@@ -106,7 +106,12 @@
 		if(istype(A, /obj/item/card/id))
 			var/obj/item/card/id/id_card = A
 <<<<<<< HEAD
+<<<<<<< HEAD
 			icon_source = id_card.get_cached_flat_icon()
+=======
+			if(id_card.uses_overlays)
+				icon_source = id_card.get_cached_flat_icon()
+>>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
 =======
 			if(id_card.uses_overlays)
 				icon_source = id_card.get_cached_flat_icon()
