@@ -16,9 +16,15 @@ SUBSYSTEM_DEF(job)
 
 	var/list/level_order = list(JP_HIGH,JP_MEDIUM,JP_LOW)
 
+<<<<<<< HEAD
 	/// Lazylist of mob:occupation_string pairs.
 	var/list/dynamic_forced_occupations
 
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> 224aaa21f8377aebb1c82a5d27f830feaf422c15
 	/// A list of all jobs associated with the station. These jobs also have various icons associated with them including sechud and card trims.
 	var/list/station_jobs
 	/// A list of all Head of Staff jobs.
@@ -55,9 +61,14 @@ SUBSYSTEM_DEF(job)
 	/// If TRUE, the "Captain" job will always be given the code to the spare ID safe and always have a "Captain on deck!" announcement.
 	var/always_promote_captain_job = TRUE
 
+=======
+>>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
+=======
+>>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
+=======
+>>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
 /datum/controller/subsystem/job/Initialize(timeofday)
 	SSmapping.HACK_LoadMapConfig()
-	setup_job_lists()
 	if(!occupations.len)
 		SetupOccupations()
 	if(CONFIG_GET(flag/load_jobs_from_txt))
@@ -456,8 +467,9 @@ SUBSYSTEM_DEF(job)
 		message_admins(message)
 		RejectPlayer(player)
 
+
 //Gives the player the stuff he should have with his rank
-/datum/controller/subsystem/job/proc/EquipRank(mob/M, rank, joined_late = FALSE, is_captain = FALSE)
+/datum/controller/subsystem/job/proc/EquipRank(mob/M, rank, joined_late = FALSE)
 	var/mob/dead/new_player/newplayer
 	var/mob/living/living_mob
 	if(!joined_late)
@@ -514,7 +526,7 @@ SUBSYSTEM_DEF(job)
 
 	to_chat(M, "<span class='infoplain'><b>You are the [rank].</b></span>")
 	if(job)
-		var/new_mob = job.equip(living_mob, null, null, joined_late , null, M.client, is_captain)//silicons override this proc to return a mob
+		var/new_mob = job.equip(living_mob, null, null, joined_late , null, M.client)//silicons override this proc to return a mob
 		if(ismob(new_mob))
 			living_mob = new_mob
 			if(!joined_late)
@@ -782,6 +794,9 @@ SUBSYSTEM_DEF(job)
 
 /datum/controller/subsystem/job/proc/JobDebug(message)
 	log_job_debug(message)
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
 
 /// Builds various lists of jobs based on station, centcom and additional jobs with icons associated with them.
 /datum/controller/subsystem/job/proc/setup_job_lists()
@@ -855,8 +870,17 @@ SUBSYSTEM_DEF(job)
 	new /obj/effect/pod_landingzone(loc, /obj/structure/closet/supplypod/centcompod, new /obj/item/paper/fluff/emergency_spare_id_safe_code())
 	safe_code_timer_id = null
 	safe_code_request_loc = null
+<<<<<<< HEAD
 
 /// Blindly assigns the required roles to every player in the dynamic_forced_occupations list.
 /datum/controller/subsystem/job/proc/assign_priority_positions()
 	for(var/mob/new_player in dynamic_forced_occupations)
 		AssignRole(new_player, dynamic_forced_occupations[new_player])
+=======
+=======
+>>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
+=======
+>>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
+=======
+>>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
+>>>>>>> 224aaa21f8377aebb1c82a5d27f830feaf422c15

@@ -1,4 +1,4 @@
-/datum/job/quartermaster
+/datum/job/qm
 	title = "Quartermaster"
 	department_head = list("Head of Personnel")
 	faction = "Station"
@@ -11,6 +11,8 @@
 	outfit = /datum/outfit/job/quartermaster
 	plasmaman_outfit = /datum/outfit/plasmaman/cargo
 
+	access = list(ACCESS_MAINT_TUNNELS, ACCESS_MAILSORTING, ACCESS_CARGO, ACCESS_QM, ACCESS_MINING, ACCESS_MECH_MINING, ACCESS_MINING_STATION, ACCESS_MINERAL_STOREROOM, ACCESS_VAULT, ACCESS_AUX_BASE)
+	minimal_access = list(ACCESS_MAINT_TUNNELS, ACCESS_MAILSORTING, ACCESS_CARGO, ACCESS_QM, ACCESS_MINING, ACCESS_MECH_MINING, ACCESS_MINING_STATION, ACCESS_MINERAL_STOREROOM, ACCESS_VAULT, ACCESS_AUX_BASE)
 	paycheck = PAYCHECK_MEDIUM
 	paycheck_department = ACCOUNT_CAR
 
@@ -19,19 +21,20 @@
 	display_order = JOB_DISPLAY_ORDER_QUARTERMASTER
 	bounty_types = CIV_JOB_RANDOM
 	departments = DEPARTMENT_CARGO
+<<<<<<< HEAD
+<<<<<<< HEAD
 	family_heirlooms = list(/obj/item/stamp, /obj/item/stamp/denied)
 	mail_goodies = list(
 		/obj/item/circuitboard/machine/emitter = 3
 	)
-
-/datum/job/quartermaster/announce(mob/living/carbon/human/H, announce_captaincy = FALSE)
-	..()
-	if(announce_captaincy)
-		SSticker.OnRoundstart(CALLBACK(GLOBAL_PROC, .proc/minor_announce, "Due to extreme staffing shortages, newly promoted Acting Captain [H.real_name] on deck!"))
+=======
+>>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
+=======
+>>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
 
 /datum/outfit/job/quartermaster
 	name = "Quartermaster"
-	jobtype = /datum/job/quartermaster
+	jobtype = /datum/job/qm
 
 	belt = /obj/item/pda/quartermaster
 	ears = /obj/item/radio/headset/headset_cargo
@@ -43,4 +46,3 @@
 
 	chameleon_extras = /obj/item/stamp/qm
 
-	id_trim = /datum/id_trim/job/quartermaster

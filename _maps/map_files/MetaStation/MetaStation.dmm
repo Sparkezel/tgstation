@@ -26222,7 +26222,7 @@
 	contents = newlist(/obj/item/clothing/suit/armor/vest,/obj/item/gun/ballistic/automatic/pistol,/obj/item/suppressor,/obj/item/melee/classic_baton/telescopic,/obj/item/clothing/mask/balaclava,/obj/item/bodybag,/obj/item/soap/nanotrasen)
 	},
 /obj/item/storage/backpack/duffelbag/syndie/hitman,
-/obj/item/card/id/advanced/silver/reaper,
+/obj/item/card/id/silver/reaper,
 /obj/item/lazarus_injector,
 /obj/item/gun/energy/disabler,
 /obj/item/gun/ballistic/revolver/russian,
@@ -27843,6 +27843,9 @@
 /turf/open/floor/iron/white,
 /area/hallway/primary/central)
 "gOe" = (
+/obj/item/radio/intercom{
+	pixel_y = 29
+	},
 /obj/machinery/modular_computer/console/preset/engineering,
 /obj/effect/turf_decal/tile/blue{
 	dir = 1
@@ -29841,6 +29844,26 @@
 /obj/machinery/atmospherics/pipe/smart/manifold4w/scrubbers/hidden/layer2,
 /turf/open/floor/iron,
 /area/security/prison)
+<<<<<<< HEAD
+=======
+"hFI" = (
+/obj/item/folder/white{
+	pixel_x = 4;
+	pixel_y = -3
+	},
+/obj/machinery/light{
+	dir = 8
+	},
+/obj/structure/table/glass,
+/obj/effect/turf_decal/tile/green{
+	dir = 1
+	},
+/obj/effect/turf_decal/tile/green{
+	dir = 8
+	},
+/turf/open/floor/iron/dark,
+/area/command/bridge)
+>>>>>>> 224aaa21f8377aebb1c82a5d27f830feaf422c15
 "hFJ" = (
 /obj/effect/turf_decal/tile/neutral{
 	dir = 4
@@ -43592,6 +43615,21 @@
 /obj/effect/turf_decal/tile/neutral{
 	dir = 4
 	},
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
+/turf/open/floor/wood,
+/area/command/heads_quarters/hop)
+"mpE" = (
+/obj/effect/turf_decal/tile/red{
+	dir = 8
+	},
+/obj/effect/turf_decal/tile/red{
+	dir = 1
+	},
+>>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
 /obj/structure/cable,
 /obj/machinery/atmospherics/pipe/smart/manifold4w/supply/hidden/layer4{
 	dir = 5
@@ -43615,7 +43653,6 @@
 /obj/machinery/modular_computer/console/preset/id{
 	dir = 4
 	},
-/obj/item/paper/fluff/ids_for_dummies,
 /turf/open/floor/wood,
 /area/command/heads_quarters/hop)
 "mpY" = (
@@ -45550,6 +45587,7 @@
 /obj/effect/turf_decal/tile/yellow{
 	dir = 4
 	},
+<<<<<<< HEAD
 /obj/effect/turf_decal/tile/yellow{
 	dir = 8
 	},
@@ -45568,6 +45606,10 @@
 	},
 /turf/open/floor/iron/white,
 /area/medical/pharmacy)
+=======
+/turf/open/floor/iron/dark,
+/area/command/bridge)
+>>>>>>> 224aaa21f8377aebb1c82a5d27f830feaf422c15
 "mVT" = (
 /obj/structure/cable,
 /obj/machinery/atmospherics/components/unary/vent_scrubber/on/layer2{

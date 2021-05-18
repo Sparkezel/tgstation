@@ -73,7 +73,7 @@
 	ears = /obj/item/radio/headset
 	l_pocket = /obj/item/ammo_box/magazine/m45
 	r_pocket = /obj/item/restraints/handcuffs
-	id = /obj/item/card/id/advanced
+	id = /obj/item/card/id
 
 /datum/outfit/spacepol/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	if(visualsOnly)
@@ -82,7 +82,6 @@
 	W.assignment = "Police Officer"
 	W.registered_name = H.real_name
 	W.update_label()
-	W.update_icon()
 
 /datum/outfit/russiancorpse/hunter
 	ears = /obj/item/radio/headset
@@ -104,7 +103,7 @@
 	glasses = /obj/item/clothing/glasses/sunglasses/garb
 	ears = /obj/item/radio/headset
 	r_pocket = /obj/item/restraints/handcuffs/cable
-	id = /obj/item/card/id/advanced
+	id = /obj/item/card/id
 	l_hand = /obj/item/tank/internals/plasma/full
 	r_hand = /obj/item/flamethrower/full/tank
 
@@ -115,7 +114,6 @@
 	W.assignment = "Bounty Hunter"
 	W.registered_name = H.real_name
 	W.update_label()
-	W.update_icon()
 
 /datum/outfit/bountyhook
 	name = "Bounty Hunter - Hook"
@@ -127,8 +125,19 @@
 	shoes = /obj/item/clothing/shoes/jackboots
 	mask = /obj/item/clothing/mask/scarecrow
 	r_pocket = /obj/item/restraints/handcuffs/cable
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
 	id = /obj/item/card/id/advanced
 	r_hand = /obj/item/gun/ballistic/shotgun/hook
+=======
+=======
+>>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
+=======
+>>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
+	id = /obj/item/card/id
+	r_hand = /obj/item/gun/ballistic/shotgun/doublebarrel/hook
+>>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
 
 	backpack_contents = list(
 		/obj/item/ammo_casing/shotgun/incapacitate = 6
@@ -141,7 +150,6 @@
 	W.assignment = "Bounty Hunter"
 	W.registered_name = H.real_name
 	W.update_label()
-	W.update_icon()
 
 /datum/outfit/bountysynth
 	name = "Bounty Hunter - Synth"
@@ -152,7 +160,7 @@
 	glasses = /obj/item/clothing/glasses/eyepatch
 	r_pocket = /obj/item/restraints/handcuffs/cable
 	ears = /obj/item/radio/headset
-	id = /obj/item/card/id/advanced
+	id = /obj/item/card/id
 	r_hand = /obj/item/storage/firstaid/regular
 	l_hand = /obj/item/pinpointer/shuttle
 
@@ -171,4 +179,3 @@
 	W.assignment = "Bounty Hunter"
 	W.registered_name = H.real_name
 	W.update_label()
-	W.update_icon()

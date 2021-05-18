@@ -40,6 +40,7 @@
 
 /mob/living/simple_animal/bot/hygienebot/Initialize()
 	. = ..()
+<<<<<<< HEAD
 	update_appearance(UPDATE_ICON)
 
 	// Doing this hurts my soul, but simplebot access reworks are for another day.
@@ -50,6 +51,12 @@
 		COMSIG_ATOM_ENTERED = .proc/on_entered,
 	)
 	AddElement(/datum/element/connect_loc, src, loc_connections)
+=======
+	update_appearance()
+	var/datum/job/janitor/J = new/datum/job/janitor
+	access_card.access += J.get_access()
+	prev_access = access_card.access
+>>>>>>> 224aaa21f8377aebb1c82a5d27f830feaf422c15
 
 /mob/living/simple_animal/bot/hygienebot/explode()
 	walk_to(src,0)

@@ -33,12 +33,17 @@
 									)
 	AddComponent(/datum/component/material_container, allowed_materials, INFINITY, MATCONTAINER_NO_INSERT|BREAKDOWN_FLAGS_RECYCLER)
 	. = ..()
+<<<<<<< HEAD
 	update_appearance(UPDATE_ICON)
 	req_one_access = SSid_access.get_region_access_list(list(REGION_ALL_STATION, REGION_CENTCOM))
 	var/static/list/loc_connections = list(
 		COMSIG_ATOM_ENTERED = .proc/on_entered,
 	)
 	AddElement(/datum/element/connect_loc, src, loc_connections)
+=======
+	update_appearance()
+	req_one_access = get_all_accesses() + get_all_centcom_access()
+>>>>>>> 224aaa21f8377aebb1c82a5d27f830feaf422c15
 
 /obj/machinery/recycler/RefreshParts()
 	var/amt_made = 0

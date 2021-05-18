@@ -27,13 +27,12 @@
 	if(W)
 		W.registered_name = H.real_name
 		W.update_label()
-		W.update_icon()
-	return ..()
+	..()
 
 /datum/outfit/centcom/ert/commander
 	name = "ERT Commander"
 
-	id = /obj/item/card/id/advanced/centcom/ert
+	id = /obj/item/card/id/ert
 	suit = /obj/item/clothing/suit/space/hardsuit/ert
 	suit_store = /obj/item/gun/energy/e_gun
 	back = /obj/item/storage/backpack/ert
@@ -68,7 +67,7 @@
 /datum/outfit/centcom/ert/security
 	name = "ERT Security"
 
-	id = /obj/item/card/id/advanced/centcom/ert/security
+	id = /obj/item/card/id/ert/security
 	suit = /obj/item/clothing/suit/space/hardsuit/ert/sec
 	suit_store = /obj/item/gun/energy/e_gun/stun
 	back = /obj/item/storage/backpack/ert/security
@@ -105,7 +104,7 @@
 /datum/outfit/centcom/ert/medic
 	name = "ERT Medic"
 
-	id = /obj/item/card/id/advanced/centcom/ert/medical
+	id = /obj/item/card/id/ert/medical
 	suit = /obj/item/clothing/suit/space/hardsuit/ert/med
 	suit_store = /obj/item/gun/energy/e_gun
 	back = /obj/item/storage/backpack/ert/medical
@@ -146,7 +145,7 @@
 /datum/outfit/centcom/ert/engineer
 	name = "ERT Engineer"
 
-	id = /obj/item/card/id/advanced/centcom/ert/engineer
+	id = /obj/item/card/id/ert/engineer
 	suit = /obj/item/clothing/suit/space/hardsuit/ert/engi
 	suit_store = /obj/item/gun/energy/e_gun
 	back = /obj/item/storage/backpack/ert/engineer
@@ -200,6 +199,21 @@
 	l_pocket = /obj/item/pen
 	r_pocket = /obj/item/pda/heads
 	l_hand = /obj/item/clipboard
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+	id = /obj/item/card/id/centcom
+	backpack_contents = list(/obj/item/stamp/centcom=1)
+>>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
+=======
+	id = /obj/item/card/id/centcom
+	backpack_contents = list(/obj/item/stamp/centcom=1)
+>>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
+=======
+	id = /obj/item/card/id/centcom
+	backpack_contents = list(/obj/item/stamp/centcom=1)
+>>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
 
 /datum/outfit/centcom/centcom_official/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	if(visualsOnly)
@@ -211,10 +225,12 @@
 	pda.update_label()
 
 	var/obj/item/card/id/W = H.wear_id
+	W.access = get_centcom_access("CentCom Official")
+	W.access += ACCESS_WEAPONS
+	W.assignment = "CentCom Official"
 	W.registered_name = H.real_name
 	W.update_label()
-	W.update_icon()
-	return ..()
+	..()
 
 /datum/outfit/centcom/ert/commander/inquisitor
 	name = "Inquisition Commander"
@@ -255,6 +271,17 @@
 	id = /obj/item/card/id/advanced/centcom/ert/chaplain
 	suit = /obj/item/clothing/suit/space/hardsuit/ert/paranormal/inquisitor // Chap role always gets this suit
 	suit_store = /obj/item/gun/energy/e_gun
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+=======
+>>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
+=======
+>>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
+	id = /obj/item/card/id/ert/chaplain
+	glasses = /obj/item/clothing/glasses/hud/health
+>>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
 	back = /obj/item/storage/backpack/cultpack
 	backpack_contents = list(
 		/obj/item/nullrod = 1,
@@ -284,7 +311,7 @@
 /datum/outfit/centcom/ert/janitor
 	name = "ERT Janitor"
 
-	id = /obj/item/card/id/advanced/centcom/ert/janitor
+	id = /obj/item/card/id/ert/janitor
 	suit = /obj/item/clothing/suit/space/hardsuit/ert/jani
 	back = /obj/item/storage/backpack/ert/janitor
 	backpack_contents = list(
@@ -325,8 +352,15 @@
 /datum/outfit/centcom/ert/clown
 	name = "ERT Clown"
 
+<<<<<<< HEAD
 	id = /obj/item/card/id/advanced/centcom/ert/clown
 	suit = /obj/item/clothing/suit/space/hardsuit/ert/clown
+=======
+	suit = /obj/item/clothing/suit/space/hardsuit/ert/clown
+	mask = /obj/item/clothing/mask/gas/clown_hat
+	id = /obj/item/card/id/ert/clown
+	glasses = /obj/item/clothing/glasses/godeye
+>>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
 	back = /obj/item/storage/backpack/ert/clown
 	backpack_contents = list(
 		/obj/item/gun/ballistic/revolver/reverse = 1,
@@ -370,17 +404,33 @@
 	shoes = /obj/item/clothing/shoes/sneakers/black
 	l_pocket = /obj/item/ammo_box/a762
 	r_pocket = /obj/item/ammo_box/a762
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
 	l_hand = /obj/item/gun/ballistic/rifle/boltaction/brand_new
+=======
+	id = /obj/item/card/id/centcom
+	backpack_contents = list(/obj/item/storage/box/survival = 1)
+>>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
+=======
+	id = /obj/item/card/id/centcom
+	backpack_contents = list(/obj/item/storage/box/survival = 1)
+>>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
+=======
+	id = /obj/item/card/id/centcom
+	backpack_contents = list(/obj/item/storage/box/survival = 1)
+>>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
 
 /datum/outfit/centcom/centcom_intern/post_equip(mob/living/carbon/human/H, visualsOnly = FALSE)
 	if(visualsOnly)
 		return
 
 	var/obj/item/card/id/W = H.wear_id
+	W.access = get_centcom_access(name)
+	W.access += ACCESS_WEAPONS
+	W.assignment = name
 	W.registered_name = H.real_name
 	W.update_label()
-	W.update_icon()
-	return ..()
 
 /datum/outfit/centcom/centcom_intern/unarmed
 	name = "CentCom Intern (Unarmed)"

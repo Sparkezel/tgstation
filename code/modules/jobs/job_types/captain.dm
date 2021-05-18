@@ -16,6 +16,8 @@
 	outfit = /datum/outfit/job/captain
 	plasmaman_outfit = /datum/outfit/plasmaman/captain
 
+	access = list() //See get_access()
+	minimal_access = list() //See get_access()
 	paycheck = PAYCHECK_COMMAND
 	paycheck_department = ACCOUNT_SEC
 
@@ -24,6 +26,9 @@
 	display_order = JOB_DISPLAY_ORDER_CAPTAIN
 	departments = DEPARTMENT_COMMAND
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
 	family_heirlooms = list(/obj/item/reagent_containers/food/drinks/flask/gold)
 
 	mail_goodies = list(
@@ -33,15 +38,30 @@
 	)
 
 /datum/job/captain/announce(mob/living/carbon/human/H, announce_captaincy = TRUE)
+=======
+=======
+>>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
+=======
+>>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
+/datum/job/captain/get_access()
+	return get_all_accesses()
+
+/datum/job/captain/announce(mob/living/carbon/human/H)
+<<<<<<< HEAD
+<<<<<<< HEAD
+>>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
+=======
+>>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
+=======
+>>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
 	..()
-	if(announce_captaincy)
-		SSticker.OnRoundstart(CALLBACK(GLOBAL_PROC, .proc/minor_announce, "Captain [H.real_name] on deck!"))
+	SSticker.OnRoundstart(CALLBACK(GLOBAL_PROC, .proc/minor_announce, "Captain [H.real_name] on deck!"))
 
 /datum/outfit/job/captain
 	name = "Captain"
 	jobtype = /datum/job/captain
 
-	id = /obj/item/card/id/advanced/gold
+	id = /obj/item/card/id/gold
 	belt = /obj/item/pda/captain
 	glasses = /obj/item/clothing/glasses/sunglasses
 	ears = /obj/item/radio/headset/heads/captain/alt
@@ -63,6 +83,9 @@
 
 	chameleon_extras = list(/obj/item/gun/energy/e_gun, /obj/item/stamp/captain)
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
 	id_trim = /datum/id_trim/job/captain
 	var/special_charter
 
@@ -88,6 +111,12 @@
 		return
 	celestial_charter.name_type = special_charter
 
+=======
+>>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
+=======
+>>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
+=======
+>>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
 /datum/outfit/job/captain/hardsuit
 	name = "Captain (Hardsuit)"
 

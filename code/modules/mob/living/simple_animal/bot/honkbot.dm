@@ -41,6 +41,7 @@
 	. = ..()
 	update_appearance()
 	auto_patrol = TRUE
+<<<<<<< HEAD
 
 	// Doing this hurts my soul, but simplebot access reworks are for another day.
 	var/datum/id_trim/job/clown_trim = SSid_access.trim_singletons_by_path[/datum/id_trim/job/clown]
@@ -50,6 +51,11 @@
 		COMSIG_ATOM_ENTERED = .proc/on_entered,
 	)
 	AddElement(/datum/element/connect_loc, src, loc_connections)
+=======
+	var/datum/job/clown/J = new/datum/job/clown
+	access_card.access += J.get_access()
+	prev_access = access_card.access
+>>>>>>> 224aaa21f8377aebb1c82a5d27f830feaf422c15
 
 /mob/living/simple_animal/bot/honkbot/proc/limiting_spam_false() //used for addtimer
 	limiting_spam = FALSE

@@ -1,4 +1,4 @@
-/datum/job/security_officer
+/datum/job/officer
 	title = "Security Officer"
 	auto_deadmin_role_flags = DEADMIN_POSITION_SECURITY
 	department_head = list("Head of Security")
@@ -14,6 +14,8 @@
 	outfit = /datum/outfit/job/security
 	plasmaman_outfit = /datum/outfit/plasmaman/security
 
+	access = list(ACCESS_SECURITY, ACCESS_SEC_DOORS, ACCESS_BRIG, ACCESS_COURT, ACCESS_MAINT_TUNNELS, ACCESS_MECH_SECURITY, ACCESS_MORGUE, ACCESS_WEAPONS, ACCESS_FORENSICS_LOCKERS, ACCESS_MINERAL_STOREROOM)
+	minimal_access = list(ACCESS_SECURITY, ACCESS_SEC_DOORS, ACCESS_BRIG, ACCESS_COURT, ACCESS_WEAPONS, ACCESS_MECH_SECURITY, ACCESS_MINERAL_STOREROOM) // See /datum/job/officer/get_access()
 	paycheck = PAYCHECK_HARD
 	paycheck_department = ACCOUNT_SEC
 
@@ -24,6 +26,9 @@
 	bounty_types = CIV_JOB_SEC
 	departments = DEPARTMENT_SECURITY
 
+<<<<<<< HEAD
+<<<<<<< HEAD
+<<<<<<< HEAD
 	family_heirlooms = list(/obj/item/book/manual/wiki/security_space_law, /obj/item/clothing/head/beret/sec)
 
 	mail_goodies = list(
@@ -45,6 +50,31 @@ GLOBAL_LIST_INIT(available_depts, list(SEC_DEPT_ENGINEERING, SEC_DEPT_MEDICAL, S
 GLOBAL_LIST_EMPTY(security_officer_distribution)
 
 /datum/job/security_officer/after_spawn(mob/living/carbon/human/H, mob/M, latejoin = FALSE)
+=======
+=======
+>>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
+/datum/job/officer/get_access()
+	var/list/L = list()
+	L |= ..() | check_config_for_sec_maint()
+	return L
+
+GLOBAL_LIST_INIT(available_depts, list(SEC_DEPT_ENGINEERING, SEC_DEPT_MEDICAL, SEC_DEPT_SCIENCE, SEC_DEPT_SUPPLY))
+
+/datum/job/officer/after_spawn(mob/living/carbon/human/H, mob/M)
+<<<<<<< HEAD
+>>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
+=======
+/datum/job/officer/get_access()
+	var/list/L = list()
+	L |= ..() | check_config_for_sec_maint()
+	return L
+
+GLOBAL_LIST_INIT(available_depts, list(SEC_DEPT_ENGINEERING, SEC_DEPT_MEDICAL, SEC_DEPT_SCIENCE, SEC_DEPT_SUPPLY))
+
+/datum/job/officer/after_spawn(mob/living/carbon/human/H, mob/M)
+>>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
+=======
+>>>>>>> parent of 890615856e (Fully implements the ID Card design document (#56910))
 	. = ..()
 
 	var/department
@@ -63,29 +93,29 @@ GLOBAL_LIST_EMPTY(security_officer_distribution)
 
 	var/ears = null
 	var/accessory = null
-	var/list/dep_trim = null
+	var/list/dep_access = null
 	var/destination = null
 	var/spawn_point = pick(LAZYACCESS(GLOB.department_security_spawns, department))
 
 	switch(department)
 		if(SEC_DEPT_SUPPLY)
 			ears = /obj/item/radio/headset/headset_sec/alt/department/supply
-			dep_trim = /datum/id_trim/job/security_officer/supply
+			dep_access = list(ACCESS_MAILSORTING, ACCESS_MINING, ACCESS_MINING_STATION, ACCESS_CARGO, ACCESS_AUX_BASE)
 			destination = /area/security/checkpoint/supply
 			accessory = /obj/item/clothing/accessory/armband/cargo
 		if(SEC_DEPT_ENGINEERING)
 			ears = /obj/item/radio/headset/headset_sec/alt/department/engi
-			dep_trim = /datum/id_trim/job/security_officer/engineering
+			dep_access = list(ACCESS_CONSTRUCTION, ACCESS_ENGINE, ACCESS_ATMOSPHERICS, ACCESS_AUX_BASE)
 			destination = /area/security/checkpoint/engineering
 			accessory = /obj/item/clothing/accessory/armband/engine
 		if(SEC_DEPT_MEDICAL)
 			ears = /obj/item/radio/headset/headset_sec/alt/department/med
-			dep_trim = /datum/id_trim/job/security_officer/medical
+			dep_access = list(ACCESS_MEDICAL, ACCESS_MORGUE, ACCESS_SURGERY)
 			destination = /area/security/checkpoint/medical
 			accessory =  /obj/item/clothing/accessory/armband/medblue
 		if(SEC_DEPT_SCIENCE)
 			ears = /obj/item/radio/headset/headset_sec/alt/department/sci
-			dep_trim = /datum/id_trim/job/security_officer/science
+			dep_access = list(ACCESS_RESEARCH, ACCESS_RND, ACCESS_AUX_BASE)
 			destination = /area/security/checkpoint/science
 			accessory = /obj/item/clothing/accessory/armband/science
 
@@ -97,11 +127,8 @@ GLOBAL_LIST_EMPTY(security_officer_distribution)
 			qdel(H.ears)
 		H.equip_to_slot_or_del(new ears(H),ITEM_SLOT_EARS)
 
-	// If there's a departmental sec trim to apply to the card, overwrite.
-	if(dep_trim)
-		var/obj/item/card/id/worn_id = H.wear_id
-		SSid_access.apply_trim_to_card(worn_id, dep_trim)
-		H.sec_hud_set_ID()
+	var/obj/item/card/id/W = H.wear_id
+	W.access |= dep_access
 
 	var/teleport = 0
 	if(!CONFIG_GET(flag/sec_start_brig))
@@ -178,7 +205,7 @@ GLOBAL_LIST_EMPTY(security_officer_distribution)
 
 /datum/outfit/job/security
 	name = "Security Officer"
-	jobtype = /datum/job/security_officer
+	jobtype = /datum/job/officer
 
 	belt = /obj/item/pda/security
 	ears = /obj/item/radio/headset/headset_sec/alt
@@ -202,7 +229,6 @@ GLOBAL_LIST_EMPTY(security_officer_distribution)
 	chameleon_extras = list(/obj/item/gun/energy/disabler, /obj/item/clothing/glasses/hud/security/sunglasses, /obj/item/clothing/head/helmet)
 	//The helmet is necessary because /obj/item/clothing/head/helmet/sec is overwritten in the chameleon list by the standard helmet, which has the same name and icon state
 
-	id_trim = /datum/id_trim/job/security_officer
 
 /obj/item/radio/headset/headset_sec/alt/department/Initialize()
 	. = ..()
